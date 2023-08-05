@@ -1,0 +1,14 @@
+@startuml Display UML
+
+
+interface RowBasedDisplay {
+    + void show_text(int row, string v)
+}
+
+RowBasedDisplay <|-- LCDDisplay
+
+RowBasedDisplay <|-- OLedDisplay
+
+
+
+@enduml

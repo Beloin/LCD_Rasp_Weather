@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(
         lcd_dht11 
         src/main.cpp
-)
+        src/drivers/RowBasedDisplay.h)
 
 add_library(
         utils_lib STATIC
