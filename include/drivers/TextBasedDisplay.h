@@ -7,14 +7,13 @@
 
 #include "string"
 
-// TODO: PUT ME INSIDE LIB FILES AND IMPLEMENT AS A EXTERNAL RESOURCE!!!!
 class TextBasedDisplay {
 
 public:
-    virtual void show_text(std::string const *v) = 0;
+    virtual void show_text(const std::string &v) = 0;
 
     explicit TextBasedDisplay(char line_break) {
-
+        this->line_break = line_break;
     }
 
 protected:

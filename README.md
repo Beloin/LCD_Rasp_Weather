@@ -22,3 +22,9 @@ There's an `interface` that dictates the way all the data will be set on display
 
 ### WeatherStatus
 
+There's an `interface` that dictates the way the weather is acquired. The data will be scoped in a single
+struct named `WeatherInfo`.
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 20px; place-items: center;">
+    <img src="./docs/Weather_UML.png" alt="Weather UML">
+</div>
