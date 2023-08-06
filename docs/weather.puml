@@ -1,0 +1,6 @@
+@startuml Weather UML
+
+interface WeatherData
+
+@enduml
+

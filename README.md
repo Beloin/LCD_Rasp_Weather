@@ -13,3 +13,12 @@ and a LCD display.
 
 ### Display
 
+There's an `interface` that dictates the way all the data will be set on display: the `TextBasedDisplay`
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 20px; place-items: center;">
+    <img src="./docs/Display_UML.png" alt="TextBasedDisplay UML">
+</div>
+
+
+### WeatherStatus
+
