@@ -10,6 +10,6 @@ TextBasedDisplay* DisplayBuilder::build(char line_separator) {
 #if ON_LINUX
     return new ConsoleDisplay('\n');
 #else
-    return new LCDDisplay('\n'); // TODO: Return implementation depending on CPU (rasp or linux)
+    return new LCDDisplay('\n');
 #endif
 }

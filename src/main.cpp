@@ -5,6 +5,8 @@ using namespace std;
 
 
 int main(int argc, char **argv) {
-    DisplayBuilder displayBuilder;
-    cout << "Hello World\n" << endl;
+    TextBasedDisplay *display = DisplayBuilder::build('\n');
+    TextBasedDisplay &basedDisplay = *display;
+    const char *name = typeid(basedDisplay).name();
+    cout << "Hello World: " << name << endl;
 }

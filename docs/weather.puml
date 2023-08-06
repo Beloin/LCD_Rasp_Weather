@@ -10,7 +10,8 @@ interface WeatherGetter {
     + void get_weather(struct WeatherInfo *weather)
 }
 
-DHT11WeatherGetter <|-- WeatherGetter
+WeatherGetter <|-- DHT11WeatherGetter
+WeatherGetter <|-- RandomValuesWeatherGetter
 
 @enduml
 

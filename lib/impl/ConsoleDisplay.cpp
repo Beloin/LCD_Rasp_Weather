@@ -14,7 +14,8 @@ void ConsoleDisplay::show_text(const std::string &v) {
     std::string to = "\n";
     size_t pos = 0;
     while ((pos = v.find(from, pos)) != std::string::npos) {
-        v.replace(pos, from.length(), to);
+//        v.replace()
+//        v.replace(pos, from.length(), to);
         pos += to.length();
     }
     std::cout << v;
