@@ -3,6 +3,10 @@
 In this project was implemented a simple Temperature and Humidity station using Raspberry PI Zero 2W
 and a LCD display.
 
+## Dependencies
+
+- [pigpio](http://abyz.me.uk/rpi/pigpio/cif.html) (Usually comes pre-installed on pi boards)
+
 ## Schematics
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 20px; place-items: center;">
@@ -28,3 +32,10 @@ struct named `WeatherInfo`.
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 20px; place-items: center;">
     <img src="./docs/Weather_UML.png" alt="Weather UML">
 </div>
+
+
+## References
+
+- [Controle de GPIO da Raspberry Pi utilizando a linguagem C](https://embarcados.com.br/gpio-da-raspberry-pi-linguagem-c/)
+- [bcm2835](http://www.airspayce.com/mikem/bcm2835/)
+- [pigpio](http://abyz.me.uk/rpi/pigpio/index.html)

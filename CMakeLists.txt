@@ -36,16 +36,4 @@ add_subdirectory(lib)
 
 target_link_libraries(lcd_dht11 PUBLIC utils_lib lib_impl)
 
-execute_process(COMMAND uname -m
-        OUTPUT_VARIABLE _output OUTPUT_STRIP_TRAILING_WHITESPACE)
-
-message("`uname -m` output was '${_output}'")
-
-# TODO: Later on do this for wiringpi lib
-if (_output STREQUAL "x86_64")
-    target_compile_definitions(lib_impl PRIVATE ON_LINUX=1)
-else()
-    target_compile_definitions(lib_impl PRIVATE ON_LINUX=0)
-endif()
-
 #target_compile_definitions(lib_impl PRIVATE ON_RASP=1)
