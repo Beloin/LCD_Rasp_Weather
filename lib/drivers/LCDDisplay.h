@@ -14,6 +14,8 @@ public:
 
     void show_text(const std::string &v) override;
 
+    void initialize();
+
 };
 
 
