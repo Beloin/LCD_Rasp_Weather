@@ -20,3 +20,7 @@ void ConsoleDisplay::show_text(const std::string &v) {
     }
     std::cout << v;
 }
+
+int ConsoleDisplay::initialize() {
+    return 0;
+}

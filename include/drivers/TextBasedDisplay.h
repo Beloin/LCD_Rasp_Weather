@@ -16,6 +16,8 @@ public:
         this->line_break = line_break;
     }
 
+    virtual int initialize() = 0;
+
 protected:
     char line_break = '\n';
 };

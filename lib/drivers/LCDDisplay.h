@@ -9,12 +9,15 @@
 #include "drivers/TextBasedDisplay.h"
 
 class LCDDisplay : public TextBasedDisplay {
+private:
+    int pig;
+
 public:
     explicit LCDDisplay(char lineBreak);
 
     void show_text(const std::string &v) override;
 
-    void initialize();
+    int initialize() override;
 
 };
 
