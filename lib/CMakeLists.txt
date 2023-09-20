@@ -20,5 +20,7 @@ else()
 
     target_compile_definitions(lib_impl PRIVATE ON_LINUX=0)
 
+    target_link_libraries(lib_impl pigpio)
+
     # Is necessary to include pigpio?
 endif()
