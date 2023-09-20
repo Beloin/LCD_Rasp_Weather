@@ -13,7 +13,7 @@ public:
     explicit ConsoleDisplay(char lineBreak);
 
     void show_text(const std::string &v) override;
-    int initialize();
+    int initialize() override;
 
 };
 
