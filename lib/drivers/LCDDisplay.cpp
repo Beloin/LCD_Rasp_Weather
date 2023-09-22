@@ -10,6 +10,7 @@
 
 #define GPIO 4
 
+// TODO: Add pigpio header
 LCDDisplay::LCDDisplay(char lineBreak) : TextBasedDisplay(lineBreak) {}
 
 void LCDDisplay::show_text(const std::string &v) {

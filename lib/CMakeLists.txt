@@ -2,7 +2,7 @@ add_library(
         lib_impl STATIC
         display_builder/DisplayBuilder.cpp
         impl/ConsoleDisplay.cpp
-)
+        ../include/pigpio.h)
 
 target_include_directories(lib_impl PUBLIC ../include ./display_builder ./impl)
 
@@ -21,6 +21,4 @@ else()
     target_compile_definitions(lib_impl PRIVATE ON_LINUX=0)
 
     target_link_libraries(lib_impl pigpio)
-
-    # Is necessary to include pigpio?
 endif()
