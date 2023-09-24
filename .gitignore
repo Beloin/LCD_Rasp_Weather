@@ -1,12 +1,15 @@
 *.out
 
 cmake-build_display-debug
+cmake-build-debug
+
 
 .idea
 
 .vscode
 
 build_display
+build
 
 # Prerequisites
 *.d
