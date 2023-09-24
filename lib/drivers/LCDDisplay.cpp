@@ -13,7 +13,7 @@
 
 using Display::LCDDisplay;
 
-Display::LCDDisplay(char lineBreak) : TextBasedDisplay(lineBreak) {}
+LCDDisplay::LCDDisplay(char lineBreak) : TextBasedDisplay(lineBreak) {}
 
 void LCDDisplay::show_text(const std::string &v) {
     while (true) {
