@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_lcd_dht11: phony || cmake_object_order_d
 build CMakeFiles/lcd_dht11.dir/src/main.cpp.o: CXX_COMPILER__lcd_dht11_Debug /home/beloin/Documents/hardware/pi-projs/lcd-dht11/src/main.cpp || cmake_object_order_depends_target_lcd_dht11
   DEP_FILE = CMakeFiles/lcd_dht11.dir/src/main.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
-  INCLUDES = -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/include -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/src/utils -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/../include -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/peripheral_factory -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./impl
+  INCLUDES = -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/include -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/src/utils -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/../include -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/peripheral_factory -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./impl -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./drivers
   OBJECT_DIR = CMakeFiles/lcd_dht11.dir
   OBJECT_FILE_DIR = CMakeFiles/lcd_dht11.dir/src
 
@@ -596,7 +596,7 @@ build lib/CMakeFiles/lib_impl.dir/peripheral_factory/PeripheralFactory.cpp.o: CX
   DEFINES = -DON_LINUX=1
   DEP_FILE = lib/CMakeFiles/lib_impl.dir/peripheral_factory/PeripheralFactory.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
-  INCLUDES = -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/../include -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/peripheral_factory -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./impl
+  INCLUDES = -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/../include -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/peripheral_factory -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./impl -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./drivers
   OBJECT_DIR = lib/CMakeFiles/lib_impl.dir
   OBJECT_FILE_DIR = lib/CMakeFiles/lib_impl.dir/peripheral_factory
 
@@ -604,7 +604,7 @@ build lib/CMakeFiles/lib_impl.dir/impl/ConsoleDisplay.cpp.o: CXX_COMPILER__lib_i
   DEFINES = -DON_LINUX=1
   DEP_FILE = lib/CMakeFiles/lib_impl.dir/impl/ConsoleDisplay.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
-  INCLUDES = -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/../include -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/peripheral_factory -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./impl
+  INCLUDES = -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/../include -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/peripheral_factory -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./impl -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./drivers
   OBJECT_DIR = lib/CMakeFiles/lib_impl.dir
   OBJECT_FILE_DIR = lib/CMakeFiles/lib_impl.dir/impl
 
@@ -612,7 +612,7 @@ build lib/CMakeFiles/lib_impl.dir/impl/RandomWeatherGeneratorTask.cpp.o: CXX_COM
   DEFINES = -DON_LINUX=1
   DEP_FILE = lib/CMakeFiles/lib_impl.dir/impl/RandomWeatherGeneratorTask.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
-  INCLUDES = -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/../include -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/peripheral_factory -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./impl
+  INCLUDES = -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/../include -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/peripheral_factory -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./impl -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./drivers
   OBJECT_DIR = lib/CMakeFiles/lib_impl.dir
   OBJECT_FILE_DIR = lib/CMakeFiles/lib_impl.dir/impl
 

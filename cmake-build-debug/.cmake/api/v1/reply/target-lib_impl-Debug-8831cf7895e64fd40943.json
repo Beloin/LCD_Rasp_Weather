@@ -1,8 +1,9 @@
 {
+	"archive" : {},
 	"artifacts" : 
 	[
 		{
-			"path" : "lcd_dht11"
+			"path" : "lib/liblib_impl.a"
 		}
 	],
 	"backtrace" : 1,
@@ -10,13 +11,13 @@
 	{
 		"commands" : 
 		[
-			"add_executable",
-			"target_link_libraries",
+			"add_library",
+			"target_compile_definitions",
 			"target_include_directories"
 		],
 		"files" : 
 		[
-			"CMakeLists.txt"
+			"lib/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -26,19 +27,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 1,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 37,
+				"line" : 16,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 18,
+				"line" : 8,
 				"parent" : 0
 			}
 		]
@@ -55,27 +56,30 @@
 					"fragment" : "-std=gnu++17"
 				}
 			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "ON_LINUX=1"
+				}
+			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/home/beloin/Documents/hardware/pi-projs/lcd-dht11/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/home/beloin/Documents/hardware/pi-projs/lcd-dht11/src/utils"
-				},
-				{
-					"backtrace" : 2,
 					"path" : "/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/../include"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"path" : "/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/peripheral_factory"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"path" : "/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./impl"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./drivers"
 				}
 			],
 			"language" : "CXX",
@@ -89,53 +93,19 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "utils_lib::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "lib_impl::@306ed2d68c6501e8728f"
-		}
-	],
-	"id" : "lcd_dht11::@6890427a1f51a3e7e1df",
-	"link" : 
-	{
-		"commandFragments" : 
-		[
-			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
-			{
-				"fragment" : "",
-				"role" : "flags"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "libutils_lib.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "lib/liblib_impl.a",
-				"role" : "libraries"
-			}
-		],
-		"language" : "CXX"
-	},
-	"name" : "lcd_dht11",
-	"nameOnDisk" : "lcd_dht11",
+	"id" : "lib_impl::@306ed2d68c6501e8728f",
+	"name" : "lib_impl",
+	"nameOnDisk" : "liblib_impl.a",
 	"paths" : 
 	{
-		"build" : ".",
-		"source" : "."
+		"build" : "lib",
+		"source" : "lib"
 	},
 	"sourceGroups" : 
 	[
@@ -143,7 +113,9 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2
 			]
 		}
 	],
@@ -152,9 +124,21 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/main.cpp",
+			"path" : "lib/peripheral_factory/PeripheralFactory.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "lib/impl/ConsoleDisplay.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "lib/impl/RandomWeatherGeneratorTask.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "STATIC_LIBRARY"
 }

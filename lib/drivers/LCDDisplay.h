@@ -8,9 +8,9 @@
 
 #include "drivers/TextBasedDisplay.h"
 
-namespace Driver {
+namespace Display {
 
-    class LCDDisplay : public Display::TextBasedDisplay {
+    class LCDDisplay : public TextBasedDisplay {
     private:
         int pig;
 

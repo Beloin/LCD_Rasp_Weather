@@ -11,9 +11,9 @@
 
 #define GPIO 4
 
-using Driver::LCDDisplay;
+using Display::LCDDisplay;
 
-LCDDisplay::LCDDisplay(char lineBreak) : TextBasedDisplay(lineBreak) {}
+Display::LCDDisplay(char lineBreak) : TextBasedDisplay(lineBreak) {}
 
 void LCDDisplay::show_text(const std::string &v) {
     while (true) {

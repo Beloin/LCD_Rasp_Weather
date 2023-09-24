@@ -5,7 +5,7 @@ add_library(
         impl/RandomWeatherGeneratorTask.cpp
 )
 
-target_include_directories(lib_impl PUBLIC ../include peripheral_factory ./impl)
+target_include_directories(lib_impl PUBLIC ../include peripheral_factory ./impl ./drivers)
 
 execute_process(COMMAND uname -m
         OUTPUT_VARIABLE _output OUTPUT_STRIP_TRAILING_WHITESPACE)
@@ -15,8 +15,8 @@ message("`uname -m` output was '${_output}'")
 if (_output STREQUAL "x86_64")
     target_compile_definitions(lib_impl PRIVATE ON_LINUX=1)
 else()
-    target_include_directories(lib_impl PUBLIC ./drivers)
     target_sources(lib_impl PRIVATE drivers/LCDDisplay.cpp)
+    target_sources(lib_impl PRIVATE drivers/DHT11Sensor.cpp)
 
     target_compile_definitions(lib_impl PRIVATE ON_LINUX=0)
 
