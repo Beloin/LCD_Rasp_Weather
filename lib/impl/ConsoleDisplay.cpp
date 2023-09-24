@@ -5,22 +5,26 @@
 #include "ConsoleDisplay.h"
 #include "iostream"
 
+namespace Display {
 
-ConsoleDisplay::ConsoleDisplay(char lineBreak) : TextBasedDisplay(lineBreak) {}
+    ConsoleDisplay::ConsoleDisplay(char lineBreak) : TextBasedDisplay(lineBreak) {}
 
-void ConsoleDisplay::show_text(const std::string &v) {
-    // Replace any special line_break char
-    std::string from = std::string(1, line_break);
-    std::string to = "\n";
-    size_t pos = 0;
-    while ((pos = v.find(from, pos)) != std::string::npos) {
+    void ConsoleDisplay::show_text(const std::string &v) {
+        // Replace any special line_break char
+        std::string from = std::string(1, line_break);
+        std::string to = "\n";
+        size_t pos = 0;
+        while ((pos = v.find(from, pos)) != std::string::npos) {
 //        v.replace()
 //        v.replace(pos, from.length(), to);
-        pos += to.length();
+            pos += to.length();
+        }
+        std::cout << v;
     }
-    std::cout << v;
+
+    int ConsoleDisplay::initialize() {
+        return 0;
+    }
+
 }
 
-int ConsoleDisplay::initialize() {
-    return 0;
-}

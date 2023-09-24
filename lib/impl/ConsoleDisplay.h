@@ -9,15 +9,15 @@
 #include "drivers/TextBasedDisplay.h"
 
 
-class ConsoleDisplay : public Display::TextBasedDisplay {
-public:
-    explicit ConsoleDisplay(char lineBreak);
+namespace Display {
+    class ConsoleDisplay : public TextBasedDisplay {
+    public:
+        explicit ConsoleDisplay(char lineBreak);
 
-    void show_text(const std::string &v) override;
+        void show_text(const std::string &v) override;
 
-    int initialize() override;
+        int initialize() override;
 
-};
-
-
+    };
+}
 #endif //LCD_DHT11_CONSOLEDISPLAY_H

@@ -1,8 +1,9 @@
 add_library(
         lib_impl STATIC
-        display_builder/DisplayBuilder.cpp
+        display_builder/PeripheralFactory.cpp
         impl/ConsoleDisplay.cpp
-        ../include/pigpio.h)
+        impl/RandomWeatherGenerator.cpp
+)
 
 target_include_directories(lib_impl PUBLIC ../include ./display_builder ./impl)
 
@@ -11,7 +12,6 @@ execute_process(COMMAND uname -m
 
 message("`uname -m` output was '${_output}'")
 
-# TODO: Why don't limit the
 if (_output STREQUAL "x86_64")
     target_compile_definitions(lib_impl PRIVATE ON_LINUX=1)
 else()

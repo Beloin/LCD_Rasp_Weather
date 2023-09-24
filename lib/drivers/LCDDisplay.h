@@ -8,18 +8,22 @@
 
 #include "drivers/TextBasedDisplay.h"
 
-class LCDDisplay : public Display::TextBasedDisplay {
-private:
-    int pig;
+namespace Driver {
 
-public:
-    explicit LCDDisplay(char lineBreak);
+    class LCDDisplay : public Display::TextBasedDisplay {
+    private:
+        int pig;
 
-    void show_text(const std::string &v) override;
+    public:
+        explicit LCDDisplay(char lineBreak);
 
-    int initialize() override;
+        void show_text(const std::string &v) override;
 
-};
+        int initialize() override;
+
+    };
+
+}
 
 
 #endif //LCD_DHT11_LCDDISPLAY_H
