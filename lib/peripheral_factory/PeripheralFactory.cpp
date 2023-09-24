@@ -24,6 +24,7 @@ namespace Factory {
 #else
 
 #include "LCDDisplay.h"
+#include "DHT11Sensor.h"
 #include "RandomWeatherGeneratorTask.h"
 
 namespace Factory {
@@ -34,7 +35,7 @@ namespace Factory {
     }
 
     Sensors::WeatherStatusTask *PeripheralFactory::build_sensor() {
-        return new Sensors::RandomWeatherGeneratorTask();
+        return new Sensors::DHT11Sensor();
     }
 }
 
