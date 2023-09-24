@@ -16,7 +16,7 @@ namespace Factory {
         return new Display::ConsoleDisplay('\n');
     }
 
-    Sensors::WeatherStatus *PeripheralFactory::build_sensor() {
+    Sensors::WeatherStatusTask *PeripheralFactory::build_sensor() {
         return new Sensors::RandomWeatherGenerator();
     }
 }
@@ -24,7 +24,7 @@ namespace Factory {
 #else
 #include "LCDDisplay.h"
 
-namespace Display {
+namespace Factory {
 
     Display::TextBasedDisplay *PeripheralFactory::build(char line_separator) {
         return new LCDDisplay('\n');

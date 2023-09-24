@@ -2,6 +2,7 @@
 // Created by beloin on 23/09/23.
 //
 
+#include <thread>
 #include "random"
 
 #include "RandomWeatherGenerator.h"
@@ -10,11 +11,14 @@ std::random_device random_dev;
 std::mt19937 rng = std::mt19937(565); // NOLINT(cert-msc51-cpp)
 //std::mt19937 rng = std::mt19937(random_dev());
 
-unsigned long random_number(int inferior_limit, int superior_limit);
+static unsigned long random_number(int inferior_limit, int superior_limit);
 
-void Sensors::RandomWeatherGenerator::update_weather(Sensors::WeatherInfo *const info) const {
-    info->temperature = .1f * (float) random_number(100, 500);
-    info->humidity = .1f * (float) random_number(0, 1000);
+[[noreturn]] void Sensors::RandomWeatherGenerator::operator()(WeatherInfo *info) const {
+    while (true) {
+        info->temperature = .1f * (float) random_number(100, 500);
+        info->humidity = .1f * (float) random_number(0, 1000);
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    }
 }
 
 unsigned long random_number(int inferior_limit, int superior_limit) {
@@ -23,6 +27,4 @@ unsigned long random_number(int inferior_limit, int superior_limit) {
 
     return dist(rng);
 }
-
-
 

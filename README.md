@@ -24,7 +24,7 @@ There's an `interface` that dictates the way all the data will be set on display
 </div>
 
 
-### WeatherStatus
+### WeatherStatusTask
 
 There's an `interface` that dictates the way the weather is acquired. The data will be scoped in a single
 struct named `WeatherInfo`.

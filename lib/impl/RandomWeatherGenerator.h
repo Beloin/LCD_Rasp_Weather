@@ -5,14 +5,14 @@
 #ifndef LCD_DHT11_RANDOMWEATHERGENERATOR_H
 #define LCD_DHT11_RANDOMWEATHERGENERATOR_H
 
-#include "drivers/WeatherStatus.h"
+#include "drivers/WeatherStatusTask.h"
 
 namespace Sensors {
 
-    class RandomWeatherGenerator : public WeatherStatus {
+    class RandomWeatherGenerator : public WeatherStatusTask {
 
-        void update_weather(Sensors::WeatherInfo *info) const override;
-
+    public:
+        [[noreturn]] void operator()(WeatherInfo *) const override;
     };
 
 }

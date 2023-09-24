@@ -7,7 +7,7 @@
 
 
 #include "drivers/TextBasedDisplay.h"
-#include "drivers/WeatherStatus.h"
+#include "drivers/WeatherStatusTask.h"
 
 namespace Factory {
 
@@ -15,7 +15,7 @@ namespace Factory {
 
     public:
         static Display::TextBasedDisplay *build_display(char line_separator);
-        static Sensors::WeatherStatus *build_sensor();
+        static Sensors::WeatherStatusTask *build_sensor();
     };
 
 
