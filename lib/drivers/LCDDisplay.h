@@ -21,6 +21,8 @@ namespace Driver {
 
         int initialize() override;
 
+        ~LCDDisplay();
+
     };
 
 }

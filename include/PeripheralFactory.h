@@ -7,13 +7,17 @@
 
 
 #include "drivers/TextBasedDisplay.h"
+#include "drivers/WeatherStatus.h"
 
 namespace Factory {
 
     class PeripheralFactory {
+
     public:
-        static Display::TextBasedDisplay *build(char line_separator);
+        static Display::TextBasedDisplay *build_display(char line_separator);
+        static Sensors::WeatherStatus *build_sensor();
     };
+
 
 }
 

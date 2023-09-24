@@ -2,9 +2,9 @@
 // Created by beloin on 23/09/23.
 //
 
-#include "RandomWeatherGenerator.h"
-
 #include "random"
+
+#include "RandomWeatherGenerator.h"
 
 std::random_device random_dev;
 std::mt19937 rng = std::mt19937(565); // NOLINT(cert-msc51-cpp)
@@ -12,7 +12,7 @@ std::mt19937 rng = std::mt19937(565); // NOLINT(cert-msc51-cpp)
 
 unsigned long random_number(int inferior_limit, int superior_limit);
 
-void RandomWeatherGenerator::update_weather(Sensors::WeatherInfo *const info) {
+void Sensors::RandomWeatherGenerator::update_weather(Sensors::WeatherInfo *const info) const {
     info->temperature = .1f * (float) random_number(100, 500);
     info->humidity = .1f * (float) random_number(0, 1000);
 }

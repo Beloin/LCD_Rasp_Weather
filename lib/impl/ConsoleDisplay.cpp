@@ -25,6 +25,5 @@ namespace Display {
     int ConsoleDisplay::initialize() {
         return 0;
     }
-
 }
 

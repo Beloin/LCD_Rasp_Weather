@@ -7,13 +7,14 @@
 
 #include "drivers/WeatherStatus.h"
 
-using Sensors::WeatherStatus;
+namespace Sensors {
 
-class RandomWeatherGenerator : WeatherStatus {
+    class RandomWeatherGenerator : public WeatherStatus {
 
-    void update_weather(Sensors::WeatherInfo *info) override;
+        void update_weather(Sensors::WeatherInfo *info) const override;
 
-};
+    };
 
+}
 
 #endif //LCD_DHT11_RANDOMWEATHERGENERATOR_H

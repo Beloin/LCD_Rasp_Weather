@@ -1,11 +1,11 @@
 add_library(
         lib_impl STATIC
-        display_builder/PeripheralFactory.cpp
+        peripheral_factory/PeripheralFactory.cpp
         impl/ConsoleDisplay.cpp
         impl/RandomWeatherGenerator.cpp
 )
 
-target_include_directories(lib_impl PUBLIC ../include ./display_builder ./impl)
+target_include_directories(lib_impl PUBLIC ../include peripheral_factory ./impl)
 
 execute_process(COMMAND uname -m
         OUTPUT_VARIABLE _output OUTPUT_STRIP_TRAILING_WHITESPACE)

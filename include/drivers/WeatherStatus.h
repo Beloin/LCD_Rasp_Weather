@@ -6,6 +6,7 @@
 #define LCD_DHT11_WEATHERSTATUS_H
 
 namespace Sensors {
+
     struct WeatherInfo {
         float temperature;
         float humidity;
@@ -13,7 +14,8 @@ namespace Sensors {
 
     class WeatherStatus {
 
-        virtual void update_weather(WeatherInfo *) = 0;
+    public:
+        virtual void update_weather(WeatherInfo *) const = 0;
 
     };
 }

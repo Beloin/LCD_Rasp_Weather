@@ -34,3 +34,6 @@ int LCDDisplay::initialize() {
 
     return 0;
 }
+
+// TODO: Create a way to destroy everything
+LCDDisplay::~LCDDisplay() {}

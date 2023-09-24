@@ -5,8 +5,18 @@ using namespace std;
 
 
 int main(int argc, char **argv) {
-    Display::TextBasedDisplay *display = Factory::PeripheralFactory::build('\n');
-    Display::TextBasedDisplay &basedDisplay = *display;
-    const char *name = typeid(basedDisplay).name();
-    cout << "Hello World: " << name << endl;
+    const char *name;
+    const Display::TextBasedDisplay *display = Factory::PeripheralFactory::build_display('\n');
+
+    name = typeid(display).name();
+    cout << "`TextBasedDisplay` Implementation: " << name << endl;
+
+    const Sensors::WeatherStatus *weatherStatus = Factory::PeripheralFactory::build_sensor();
+    Sensors::WeatherInfo weatherInfo{0, 0};
+    name = typeid(weatherStatus).name();
+    cout << "`WeatherStatus` Implementation: " << name << endl;
+
+    weatherStatus->update_weather(&weatherInfo);
+
+    cout << "T: " << weatherInfo.temperature << endl << "H: " << weatherInfo.humidity << endl;
 }

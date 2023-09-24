@@ -1,0 +1,21 @@
+# ninja log v5
+98	589	1692412340554158306	libutils_lib.a	27053030ce78ff50
+2	287	1692414424261651876	lib/CMakeFiles/lib_impl.dir/drivers/LCDDisplay.cpp.o	541a808947aff279
+2	597	1695525731505372713	lib/CMakeFiles/lib_impl.dir/impl/ConsoleDisplay.cpp.o	705c6033b548ad1b
+1	76	1695525744102063228	lib/liblib_impl.a	50814c716055ed49
+1	344	1695525744372063731	CMakeFiles/lcd_dht11.dir/src/main.cpp.o	2efe067f9253e71a
+344	432	1695525744458730560	lcd_dht11	505989a7c5db870f
+1	441	1695525731345372406	lib/CMakeFiles/lib_impl.dir/display_builder/PeripheralFactory.cpp.o	f31b291a6ab00ecd
+1	750	1695525731658706340	lib/CMakeFiles/lib_impl.dir/impl/RandomWeatherGenerator.cpp.o	3c312f60917c4179
+1	98	1692412340070826562	CMakeFiles/utils_lib.dir/src/utils/defin.c.o	7f45e9c17f1ec23
+2	268	1692414155145969643	lib/CMakeFiles/lib_impl.dir/impl/LCDDisplay.cpp.o	b999f4b731d6c7ce
+2	284	1695527197649387712	lib/CMakeFiles/lib_impl.dir/peripheral_factory/PeripheralFactory.cpp.o	62641e2c1f5ab127
+1	371	1695527197736054367	CMakeFiles/lcd_dht11.dir/src/main.cpp.o	466d1c54bf1d933e
+2	381	1695527197746054366	lib/CMakeFiles/lib_impl.dir/impl/ConsoleDisplay.cpp.o	65f191fb0ab5387e
+2	496	1695527197862721018	lib/CMakeFiles/lib_impl.dir/impl/RandomWeatherGenerator.cpp.o	3a698e13c77a2e0d
+496	749	1695527198112720987	lib/liblib_impl.a	7b662e8a692077be
+749	831	1695527198196054310	lcd_dht11	505989a7c5db870f
+1	321	1695527213636052348	CMakeFiles/lcd_dht11.dir/src/main.cpp.o	466d1c54bf1d933e
+321	382	1695527213696052341	lcd_dht11	505989a7c5db870f
+1	354	1695527247189381228	CMakeFiles/lcd_dht11.dir/src/main.cpp.o	466d1c54bf1d933e
+354	448	1695527247279381216	lcd_dht11	505989a7c5db870f
