@@ -159,7 +159,7 @@ cc_library(
     deps = [":gtest"],
 )
 
-# The following rules build_display samples of how to use gTest.
+# The following rules build samples of how to use gTest.
 cc_library(
     name = "gtest_sample_lib",
     srcs = [

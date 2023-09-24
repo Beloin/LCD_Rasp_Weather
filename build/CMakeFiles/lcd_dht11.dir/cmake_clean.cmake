@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/lcd_dht11.dir/src/main.cpp.o"
-  "CMakeFiles/lcd_dht11.dir/src/main.cpp.o.d"
   "lcd_dht11"
   "lcd_dht11.pdb"
 )

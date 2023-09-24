@@ -30,7 +30,7 @@ namespace Factory {
 namespace Factory {
 
     // TODO: For now we will be using ConsoleDisplay because we need to add pins to LCD
-    Display::TextBasedDisplay *PeripheralFactory::build(char line_separator) {
+    Display::TextBasedDisplay *PeripheralFactory::build_display(char line_separator) {
         return new Display::ConsoleDisplay('\n');
     }
 

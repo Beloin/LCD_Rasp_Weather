@@ -273,7 +273,7 @@ For a complete example using derived test fixtures, see
 
 You're probably using an `ASSERT_*()` in a function that doesn't return `void`.
 `ASSERT_*()` can only be used in `void` functions, due to exceptions being
-disabled by our build_display system. Please see more details
+disabled by our build system. Please see more details
 [here](advanced.md#assertion-placement).
 
 ## My death test hangs (or seg-faults). How do I fix it?
@@ -631,7 +631,7 @@ In general, the recommended way to cause the code to behave differently under
 test is [Dependency Injection](http://en.wikipedia.org/wiki/Dependency_injection). You can inject
 different functionality from the test and from the production code. Since your
 production code doesn't link in the for-test logic at all (the
-[`testonly`](http://docs.bazel.build_display/versions/master/be/common-definitions.html#common.testonly) attribute for BUILD targets helps to ensure
+[`testonly`](http://docs.bazel.build/versions/master/be/common-definitions.html#common.testonly) attribute for BUILD targets helps to ensure
 that), there is no danger in accidentally running it.
 
 However, if you *really*, *really*, *really* have no choice, and if you follow

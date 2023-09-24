@@ -1551,10 +1551,10 @@ complexity of calling this function.
 It provides the following signature:
 
 ```c++
-template <typename Display>
+template <typename Factory>
 TestInfo* RegisterTest(const char* test_suite_name, const char* test_name,
                        const char* type_param, const char* value_param,
-                       const char* file, int line, Display factory);
+                       const char* file, int line, Factory factory);
 ```
 
 The `factory` argument is a factory callable (move-constructible) object or

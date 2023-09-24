@@ -28,8 +28,8 @@ Pull requests containing fixes are welcome!
 
 ### Build systems
 
-*   [Bazel](https://bazel.build_display/)
+*   [Bazel](https://bazel.build/)
 *   [CMake](https://cmake.org/)
 
-Bazel is the build_display system used by the team internally and in tests. CMake is
+Bazel is the build system used by the team internally and in tests. CMake is
 supported on a best-effort basis and by the community.

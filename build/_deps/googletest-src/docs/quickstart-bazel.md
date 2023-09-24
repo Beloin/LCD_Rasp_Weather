@@ -1,7 +1,7 @@
 # Quickstart: Building with Bazel
 
 This tutorial aims to get you up and running with GoogleTest using the Bazel
-build_display system. If you're using GoogleTest for the first time or need a refresher,
+build system. If you're using GoogleTest for the first time or need a refresher,
 we recommend this tutorial as a starting point.
 
 ## Prerequisites
@@ -10,14 +10,14 @@ To complete this tutorial, you'll need:
 
 *   A compatible operating system (e.g. Linux, macOS, Windows).
 *   A compatible C++ compiler that supports at least C++11.
-*   [Bazel](https://bazel.build_display/), the preferred build_display system used by the
+*   [Bazel](https://bazel.build/), the preferred build system used by the
     GoogleTest team.
 
 See [Supported Platforms](platforms.md) for more information about platforms
 compatible with GoogleTest.
 
 If you don't already have Bazel installed, see the
-[Bazel installation guide](https://docs.bazel.build_display/versions/main/install.html).
+[Bazel installation guide](https://docs.bazel.build/versions/main/install.html).
 
 {: .callout .note}
 Note: The terminal commands in this tutorial show a Unix shell prompt, but the
@@ -26,11 +26,11 @@ commands work on the Windows command line as well.
 ## Set up a Bazel workspace
 
 A
-[Bazel workspace](https://docs.bazel.build_sensor/versions/main/build_display-ref.html#workspace)
+[Bazel workspace](https://docs.bazel.build/versions/main/build-ref.html#workspace)
 is a directory on your filesystem that you use to manage source files for the
-software you want to build_display. Each workspace directory has a text file named
+software you want to build. Each workspace directory has a text file named
 `WORKSPACE` which may be empty, or may contain references to external
-dependencies required to build_display the outputs.
+dependencies required to build the outputs.
 
 First, create a directory for your workspace:
 
@@ -40,9 +40,9 @@ $ mkdir my_workspace && cd my_workspace
 
 Next, you’ll create the `WORKSPACE` file to specify dependencies. A common and
 recommended way to depend on GoogleTest is to use a
-[Bazel external dependency](https://docs.bazel.build_display/versions/main/external.html)
+[Bazel external dependency](https://docs.bazel.build/versions/main/external.html)
 via the
-[`http_archive` rule](https://docs.bazel.build_display/versions/main/repo/http.html#http_archive).
+[`http_archive` rule](https://docs.bazel.build/versions/main/repo/http.html#http_archive).
 To do this, in the root directory of your workspace (`my_workspace/`), create a
 file named `WORKSPACE` with the following contents:
 
@@ -62,7 +62,7 @@ as a ZIP archive from GitHub. In the above example,
 GoogleTest version to use; we recommend updating the hash often to point to the
 latest version.
 
-Now you're ready to build_display C++ code that uses GoogleTest.
+Now you're ready to build C++ code that uses GoogleTest.
 
 ## Create and run a binary
 
@@ -88,7 +88,7 @@ GoogleTest provides [assertions](primer.md#assertions) that you use to test the
 behavior of your code. The above sample includes the main GoogleTest header file
 and demonstrates some basic assertions.
 
-To build_display the code, create a file named `BUILD` in the same directory with the
+To build the code, create a file named `BUILD` in the same directory with the
 following contents:
 
 ```
@@ -100,13 +100,13 @@ cc_test(
 )
 ```
 
-This `cc_test` rule declares the C++ test binary you want to build_display, and links to
+This `cc_test` rule declares the C++ test binary you want to build, and links to
 GoogleTest (`//:gtest_main`) using the prefix you specified in the `WORKSPACE`
 file (`@com_google_googletest`). For more information about Bazel `BUILD` files,
 see the
-[Bazel C++ Tutorial](https://docs.bazel.build_display/versions/main/tutorial/cpp.html).
+[Bazel C++ Tutorial](https://docs.bazel.build/versions/main/tutorial/cpp.html).
 
-Now you can build_display and run your test:
+Now you can build and run your test:
 
 <pre>
 <strong>my_workspace$ bazel test --test_output=all //:hello_test</strong>

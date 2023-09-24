@@ -1340,10 +1340,10 @@ See also [`Environment`](#Environment).
 ### RegisterTest {#RegisterTest}
 
 ```cpp
-template <typename Display>
+template <typename Factory>
 TestInfo* ::testing::RegisterTest(const char* test_suite_name, const char* test_name,
                                   const char* type_param, const char* value_param,
-                                  const char* file, int line, Display factory)
+                                  const char* file, int line, Factory factory)
 ```
 
 Dynamically registers a test with the framework.

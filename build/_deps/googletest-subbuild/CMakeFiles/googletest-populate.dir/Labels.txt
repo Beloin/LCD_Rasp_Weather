@@ -1,14 +1,14 @@
 # Target labels
  googletest-populate
 # Source files and their labels
-/home/beloin/Documents/hardware/pi-projs/lcd-dht11/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate
-/home/beloin/Documents/hardware/pi-projs/lcd-dht11/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule
-/home/beloin/Documents/hardware/pi-projs/lcd-dht11/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule
-/home/beloin/Documents/hardware/pi-projs/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule
-/home/beloin/Documents/hardware/pi-projs/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule
-/home/beloin/Documents/hardware/pi-projs/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule
-/home/beloin/Documents/hardware/pi-projs/lcd-dht11/build_display/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule
-/home/beloin/Documents/hardware/pi-projs/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule
-/home/beloin/Documents/hardware/pi-projs/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule
-/home/beloin/Documents/hardware/pi-projs/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule
-/home/beloin/Documents/hardware/pi-projs/lcd-dht11/build_sensor/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule
+/home/beloin/Documents/projects/lcd-dht11/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate
+/home/beloin/Documents/projects/lcd-dht11/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule
+/home/beloin/Documents/projects/lcd-dht11/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule
+/home/beloin/Documents/projects/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule
+/home/beloin/Documents/projects/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule
+/home/beloin/Documents/projects/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule
+/home/beloin/Documents/projects/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule
+/home/beloin/Documents/projects/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule
+/home/beloin/Documents/projects/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule
+/home/beloin/Documents/projects/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule
+/home/beloin/Documents/projects/lcd-dht11/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule

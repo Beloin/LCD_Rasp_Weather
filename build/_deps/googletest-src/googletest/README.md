@@ -2,21 +2,21 @@
 
 #### Setup
 
-To build_display GoogleTest and your tests that use it, you need to tell your build_display
+To build GoogleTest and your tests that use it, you need to tell your build
 system where to find its headers and source files. The exact way to do it
-depends on which build_display system you use, and is usually straightforward.
+depends on which build system you use, and is usually straightforward.
 
 ### Build with CMake
 
-GoogleTest comes with a CMake build_display script
+GoogleTest comes with a CMake build script
 ([CMakeLists.txt](https://github.com/google/googletest/blob/master/CMakeLists.txt))
 that can be used on a wide range of platforms ("C" stands for cross-platform.).
 If you don't have CMake installed already, you can download it for free from
 <http://www.cmake.org/>.
 
-CMake works by generating native makefiles or build_display projects that can be used in
-the compiler environment of your choice. You can either build_display GoogleTest as a
-standalone project or it can be incorporated into an existing CMake build_display for
+CMake works by generating native makefiles or build projects that can be used in
+the compiler environment of your choice. You can either build GoogleTest as a
+standalone project or it can be incorporated into an existing CMake build for
 another project.
 
 #### Standalone CMake Project
@@ -27,20 +27,20 @@ with
 ```
 git clone https://github.com/google/googletest.git -b release-1.11.0
 cd googletest        # Main directory of the cloned repository.
-mkdir build_sensor          # Create a directory to hold the build_display output.
-cd build_display
-cmake ..             # Generate native build_display scripts for GoogleTest.
+mkdir build          # Create a directory to hold the build output.
+cd build
+cmake ..             # Generate native build scripts for GoogleTest.
 ```
 
 The above command also includes GoogleMock by default. And so, if you want to
-build_display only GoogleTest, you should replace the last command with
+build only GoogleTest, you should replace the last command with
 
 ```
 cmake .. -DBUILD_GMOCK=OFF
 ```
 
 If you are on a \*nix system, you should now see a Makefile in the current
-directory. Just type `make` to build_display GoogleTest. And then you can simply install
+directory. Just type `make` to build GoogleTest. And then you can simply install
 GoogleTest if you are a system administrator.
 
 ```
@@ -49,7 +49,7 @@ sudo make install    # Install in /usr/local/ by default
 ```
 
 If you use Windows and have Visual Studio installed, a `gtest.sln` file and
-several `.vcproj` files will be created. You can then build_display them using Visual
+several `.vcproj` files will be created. You can then build them using Visual
 Studio.
 
 On Mac OS X with Xcode installed, a `.xcodeproj` file will be generated.
@@ -63,14 +63,14 @@ way is to get installed libraries and headers.
     example, if `find_package(GTest CONFIG REQUIRED)` succeeds, you can use the
     libraries as `GTest::gtest`, `GTest::gmock`.
 
-And a more robust and flexible approach is to build_display GoogleTest as part of that
+And a more robust and flexible approach is to build GoogleTest as part of that
 project directly. This is done by making the GoogleTest source code available to
-the main build_display and adding it using CMake's `add_subdirectory()` command. This
+the main build and adding it using CMake's `add_subdirectory()` command. This
 has the significant advantage that the same compiler and linker settings are
 used between GoogleTest and the rest of your project, so issues associated with
 using incompatible libraries (eg debug/release), etc. are avoided. This is
 particularly useful on Windows. Making GoogleTest's source code available to the
-main build_display can be done a few different ways:
+main build can be done a few different ways:
 
 *   Download the GoogleTest source code manually and place it at a known
     location. This is the least flexible approach and can make it more difficult
@@ -81,11 +81,11 @@ main build_display can be done a few different ways:
 *   Add GoogleTest as a git submodule or equivalent. This may not always be
     possible or appropriate. Git submodules, for example, have their own set of
     advantages and drawbacks.
-*   Use CMake to download GoogleTest as part of the build_display's configure step. This
+*   Use CMake to download GoogleTest as part of the build's configure step. This
     approach doesn't have the limitations of the other methods.
 
 The last of the above methods is implemented with a small piece of CMake code
-that downloads and pulls the GoogleTest code into the main build_display.
+that downloads and pulls the GoogleTest code into the main build.
 
 Just add to your `CMakeLists.txt`:
 
@@ -124,7 +124,7 @@ match the project in which it is included.
 
 #### C++ Standard Version
 
-An environment that supports C++11 is required in order to successfully build_display
+An environment that supports C++11 is required in order to successfully build
 GoogleTest. One way to ensure this is to specify the standard in the top-level
 project, for example by using the `set(CMAKE_CXX_STANDARD 11)` command. If this
 is not feasible, for example in a C project using GoogleTest for validation,
@@ -160,13 +160,13 @@ or
 
 When GoogleTest uses pthread, you may need to add flags to your compiler and/or
 linker to select the pthread library, or you'll get link errors. If you use the
-CMake script, this is taken care of for you. If you use your own build_display script,
+CMake script, this is taken care of for you. If you use your own build script,
 you'll need to read your compiler and linker's manual to figure out what flags
 to add.
 
 ### As a Shared Library (DLL)
 
-GoogleTest is compact, so most users can build_display and link it as a static library
+GoogleTest is compact, so most users can build and link it as a static library
 for the simplicity. You can choose to use GoogleTest as a shared library (known
 as a DLL on Windows) if you prefer.
 
@@ -188,7 +188,7 @@ compilers (e.g. GCC), they may become necessary in the future, if we decide to
 improve the speed of loading the library (see
 <http://gcc.gnu.org/wiki/Visibility> for details). Therefore you are recommended
 to always add the above flags when using GoogleTest as a shared library.
-Otherwise a future release of GoogleTest may break your build_display script.
+Otherwise a future release of GoogleTest may break your build script.
 
 ### Avoiding Macro Name Clashes
 

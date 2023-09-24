@@ -85,7 +85,7 @@ to check your formatting.
 
 ## Requirements for Contributors
 
-If you plan to contribute a patch, you need to build_display Google Test, Google Mock,
+If you plan to contribute a patch, you need to build Google Test, Google Mock,
 and their own tests from a git checkout, which has further requirements:
 
 *   [Python](https://www.python.org/) v2.3 or newer (for running some of the
@@ -119,7 +119,7 @@ explicitly where your Python executable can be found:
 
     cmake -DPYTHON_EXECUTABLE=path/to/python ...
 
-Next, you can build_display Google Test and / or Google Mock and all desired tests. On
+Next, you can build Google Test and / or Google Mock and all desired tests. On
 \*nix, this is usually done by
 
     make

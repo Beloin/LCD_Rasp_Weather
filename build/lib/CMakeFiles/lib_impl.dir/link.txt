@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblib_impl.a CMakeFiles/lib_impl.dir/peripheral_factory/PeripheralFactory.cpp.o CMakeFiles/lib_impl.dir/impl/ConsoleDisplay.cpp.o CMakeFiles/lib_impl.dir/impl/RandomWeatherGeneratorTask.cpp.o CMakeFiles/lib_impl.dir/drivers/LCDDisplay.cpp.o CMakeFiles/lib_impl.dir/drivers/DHT11Sensor.cpp.o
+/usr/bin/ranlib liblib_impl.a

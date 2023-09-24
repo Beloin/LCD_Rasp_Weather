@@ -1,4 +1,4 @@
-## Using GoogleTest from various build_display systems
+## Using GoogleTest from various build systems
 
 GoogleTest comes with pkg-config files that can be used to determine all
 necessary flags for compiling and linking to GoogleTest (and GoogleMock).
@@ -10,7 +10,7 @@ Pkg-config is a standardised plain-text format containing
 *   the library (-L) path
 *   the library (-l) to link to
 
-All current build_display systems support pkg-config in one way or another. For all
+All current build systems support pkg-config in one way or another. For all
 examples here we assume you want to compile the sample
 `samples/sample3_unittest.cc`.
 
@@ -76,7 +76,7 @@ assume the final prefix of the cross-compiled installation will be `/usr`, and
 your sysroot is `/home/MYUSER/sysroot`. Configure and install GTest using
 
 ```
-mkdir build_display && cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+mkdir build && cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 ```
 
 Install into the sysroot using `DESTDIR`:
@@ -144,5 +144,5 @@ $ pkg-config --libs gtest
 ```
 
 which contains the correct sysroot now. For a more comprehensive guide to also
-including `${CHOST}` in build_display system calls, see the excellent tutorial by Diego
+including `${CHOST}` in build system calls, see the excellent tutorial by Diego
 Elio Pettenò: <https://autotools.io/pkgconfig/cross-compiling.html>

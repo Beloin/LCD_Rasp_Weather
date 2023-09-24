@@ -10,7 +10,7 @@
 #include "DHT11Sensor.h"
 #include "pigpio.h"
 
-#define DHT11_GPIO 89999
+#define DHT11_GPIO 4
 #define TOTAL_BITS 40
 
 using namespace std;

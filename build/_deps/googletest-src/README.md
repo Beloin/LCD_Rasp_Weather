@@ -84,10 +84,10 @@ Pull requests containing fixes are welcome!
 
 ### Build Systems
 
-*   [Bazel](https://bazel.build_display/)
+*   [Bazel](https://bazel.build/)
 *   [CMake](https://cmake.org/)
 
-**Note:** Bazel is the build_display system used by the team internally and in tests.
+**Note:** Bazel is the build system used by the team internally and in tests.
 CMake is supported on a best-effort basis and by the community.
 
 ## Who Is Using GoogleTest?

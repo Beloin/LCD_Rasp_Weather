@@ -15,7 +15,7 @@ you expected to happen, and what actually happened.
 
 It's important that we are able to reproduce the problem that you are
 experiencing. Please provide all code and relevant steps to reproduce the
-problem, including your `BUILD`/`CMakeLists.txt` file and build_display commands. Links
+problem, including your `BUILD`/`CMakeLists.txt` file and build commands. Links
 to a GitHub branch or [godbolt.org](https://godbolt.org/) that demonstrate the
 problem are also helpful.
 
@@ -33,10 +33,10 @@ distribution as well.
 Please include the output of `gcc -v` or `clang -v`, or the equivalent for your
 compiler.
 
-**What build_display system are you using?**
+**What build system are you using?**
 
 Please include the output of `bazel --version` or `cmake --version`, or the
-equivalent for your build_display system.
+equivalent for your build system.
 
 **Additional context**
 

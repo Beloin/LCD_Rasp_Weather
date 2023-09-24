@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/lcd_dht11.dir/src/main.cpp.o -o lcd_dht11  libutils_lib.a 
+/usr/bin/c++ CMakeFiles/lcd_dht11.dir/src/main.cpp.o -o lcd_dht11  libutils_lib.a lib/liblib_impl.a -lpigpio 

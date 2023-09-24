@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/utils_lib.dir/src/utils/defin.c.o"
-  "CMakeFiles/utils_lib.dir/src/utils/defin.c.o.d"
   "libutils_lib.a"
   "libutils_lib.pdb"
 )

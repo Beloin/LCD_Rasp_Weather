@@ -875,7 +875,7 @@ A frequently used matcher is `_`, which matches anything:
 
 ### Combining Matchers {#CombiningMatchers}
 
-You can build_display complex matchers from existing ones using `AllOf()`,
+You can build complex matchers from existing ones using `AllOf()`,
 `AllOfArray()`, `AnyOf()`, `AnyOfArray()` and `Not()`:
 
 ```cpp
@@ -1119,7 +1119,7 @@ vector<int> v;
 const int count = count_if(v.begin(), v.end(), Matches(Ge(10)));
 ```
 
-Since you can build_display complex matchers from simpler ones easily using gMock, this
+Since you can build complex matchers from simpler ones easily using gMock, this
 gives you a way to conveniently construct composite predicates (doing the same
 using STL's `<functional>` header is just painful). For example, here's a
 predicate that's satisfied by any number that is >= 0, <= 100, and != 50:
@@ -1456,7 +1456,7 @@ the pointer is copied. When the last matcher that references the implementation
 object dies, the implementation object will be deleted.
 
 Therefore, if you have some complex matcher that you want to use again and
-again, there is no need to build_display it every time. Just assign it to a matcher
+again, there is no need to build it every time. Just assign it to a matcher
 variable and use that variable repeatedly! For example,
 
 ```cpp
@@ -2606,7 +2606,7 @@ efficient. When the last action that references the implementation object dies,
 the implementation object will be deleted.
 
 If you have some complex action that you want to use again and again, you may
-not have to build_display it from scratch every time. If the action doesn't have an
+not have to build it from scratch every time. If the action doesn't have an
 internal state (i.e. if it always does the same thing no matter how many times
 it has been called), you can assign it to an action variable and use that
 variable repeatedly. For example:
@@ -3255,7 +3255,7 @@ command line.
 
 ### Running Tests in Emacs
 
-If you build_display and run your tests in Emacs using the `M-x google-compile` command
+If you build and run your tests in Emacs using the `M-x google-compile` command
 (as many googletest users do), the source file locations of gMock and googletest
 errors will be highlighted. Just press `<Enter>` on one of them and you'll be
 taken to the offending line. Or, you can just type `C-x`` to jump to the next
@@ -3269,8 +3269,8 @@ To make it even easier, you can add the following lines to your `~/.emacs` file:
 (global-set-key [M-up]  '(lambda () (interactive) (next-error -1)))
 ```
 
-Then you can type `M-m` to start a build_display (if you want to run the test as well,
-just make sure `foo_test.run` or `runtests` is in the build_display command you supply
+Then you can type `M-m` to start a build (if you want to run the test as well,
+just make sure `foo_test.run` or `runtests` is in the build command you supply
 after typing `M-m`), or `M-up`/`M-down` to move back and forth between errors.
 
 ## Extending gMock

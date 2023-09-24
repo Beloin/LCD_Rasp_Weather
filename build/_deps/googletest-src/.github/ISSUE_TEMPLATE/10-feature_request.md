@@ -18,7 +18,7 @@ Ideally, explain why a combination of existing features cannot be used instead.
 
 Include a detailed description of the feature, with usage examples.
 
-**Is the feature specific to an operating system, compiler, or build_display system version?**
+**Is the feature specific to an operating system, compiler, or build system version?**
 
 If it is, please specify which versions.
 

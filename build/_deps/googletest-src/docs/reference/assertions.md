@@ -297,7 +297,7 @@ absolute error bound *`abs_error`*.
 ## Exception Assertions {#exceptions}
 
 The following assertions verify that a piece of code throws, or does not throw,
-an exception. Usage requires exceptions to be enabled in the build_display environment.
+an exception. Usage requires exceptions to be enabled in the build environment.
 
 Note that the piece of code under test can be a compound statement, for example:
 

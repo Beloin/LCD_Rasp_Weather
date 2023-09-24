@@ -1,7 +1,7 @@
-# Ignore CI build_display directory
-build_display/
+# Ignore CI build directory
+build/
 xcuserdata
-cmake-build_display-debug/
+cmake-build-debug/
 .idea/
 bazel-bin
 bazel-genfiles
@@ -28,7 +28,7 @@ x64-Release/
 Makefile.in
 aclocal.m4
 configure
-build_display-aux/
+build-aux/
 autom4te.cache/
 googletest/m4/libtool.m4
 googletest/m4/ltoptions.m4

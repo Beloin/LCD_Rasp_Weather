@@ -11,11 +11,11 @@ To complete this tutorial, you'll need:
 
 *   A compatible operating system (e.g. Linux, macOS, Windows).
 *   A compatible C++ compiler that supports at least C++11.
-*   [CMake](https://cmake.org/) and a compatible build_display tool for building the
+*   [CMake](https://cmake.org/) and a compatible build tool for building the
     project.
-    *   Compatible build_display tools include
+    *   Compatible build tools include
         [Make](https://www.gnu.org/software/make/),
-        [Ninja](https://ninja-build_display.org/), and others - see
+        [Ninja](https://ninja-build.org/), and others - see
         [CMake Generators](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html)
         for more information.
 
@@ -31,7 +31,7 @@ commands work on the Windows command line as well.
 
 ## Set up a project
 
-CMake uses a file named `CMakeLists.txt` to configure the build_display system for a
+CMake uses a file named `CMakeLists.txt` to configure the build system for a
 project. You'll use this file to set up your project and declare a dependency on
 GoogleTest.
 
@@ -97,7 +97,7 @@ GoogleTest provides [assertions](primer.md#assertions) that you use to test the
 behavior of your code. The above sample includes the main GoogleTest header file
 and demonstrates some basic assertions.
 
-To build_display the code, add the following to the end of your `CMakeLists.txt` file:
+To build the code, add the following to the end of your `CMakeLists.txt` file:
 
 ```cmake
 enable_testing()
@@ -116,27 +116,27 @@ gtest_discover_tests(hello_test)
 ```
 
 The above configuration enables testing in CMake, declares the C++ test binary
-you want to build_display (`hello_test`), and links it to GoogleTest (`gtest_main`). The
+you want to build (`hello_test`), and links it to GoogleTest (`gtest_main`). The
 last two lines enable CMake's test runner to discover the tests included in the
 binary, using the
 [`GoogleTest` CMake module](https://cmake.org/cmake/help/git-stage/module/GoogleTest.html).
 
-Now you can build_display and run your test:
+Now you can build and run your test:
 
 <pre>
-<strong>my_project$ cmake -S . -B build_display</strong>
+<strong>my_project$ cmake -S . -B build</strong>
 -- The C compiler identification is GNU 10.2.1
 -- The CXX compiler identification is GNU 10.2.1
 ...
--- Build files have been written to: .../my_project/build_display
+-- Build files have been written to: .../my_project/build
 
-<strong>my_project$ cmake --build_display build_display</strong>
+<strong>my_project$ cmake --build build</strong>
 Scanning dependencies of target gtest
 ...
 [100%] Built target gmock_main
 
-<strong>my_project$ cd build_display && ctest</strong>
-Test project .../my_project/build_display
+<strong>my_project$ cd build && ctest</strong>
+Test project .../my_project/build
     Start 1: HelloTest.BasicAssertions
 1/1 Test #1: HelloTest.BasicAssertions ........   Passed    0.00 sec
 
