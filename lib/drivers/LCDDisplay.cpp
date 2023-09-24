@@ -29,7 +29,7 @@ std::once_flag flag;
 int LCDDisplay::initialize() {
     static int err = 0;
     std::call_once(flag, [&]() {
-        pig = gpioInitialise();
+        pig = gpioInitialise(); // TODO: Call this elsewhere
 
         if (pig < 0) return pig;
 
