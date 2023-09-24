@@ -13,11 +13,11 @@ namespace Display {
     class TextBasedDisplay {
 
     public:
-        virtual void show_text(const std::string &v) = 0;
-
         explicit TextBasedDisplay(char line_break) {
             this->line_break = line_break;
         }
+
+        virtual void show_text(const std::string &v) = 0;
 
         virtual int initialize() = 0;
 

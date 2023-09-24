@@ -5,7 +5,7 @@
 #include <thread>
 #include "random"
 
-#include "RandomWeatherGenerator.h"
+#include "RandomWeatherGeneratorTask.h"
 
 std::random_device random_dev;
 std::mt19937 rng = std::mt19937(565); // NOLINT(cert-msc51-cpp)
@@ -13,7 +13,8 @@ std::mt19937 rng = std::mt19937(565); // NOLINT(cert-msc51-cpp)
 
 static unsigned long random_number(int inferior_limit, int superior_limit);
 
-[[noreturn]] void Sensors::RandomWeatherGenerator::operator()(WeatherInfo *info) const {
+[[noreturn]] void Sensors::RandomWeatherGeneratorTask::operator()(WeatherInfo *info) const {
+    info->status = Ok;
     while (true) {
         info->temperature = .1f * (float) random_number(100, 500);
         info->humidity = .1f * (float) random_number(0, 1000);

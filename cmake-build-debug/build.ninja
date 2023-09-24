@@ -608,9 +608,9 @@ build lib/CMakeFiles/lib_impl.dir/impl/ConsoleDisplay.cpp.o: CXX_COMPILER__lib_i
   OBJECT_DIR = lib/CMakeFiles/lib_impl.dir
   OBJECT_FILE_DIR = lib/CMakeFiles/lib_impl.dir/impl
 
-build lib/CMakeFiles/lib_impl.dir/impl/RandomWeatherGenerator.cpp.o: CXX_COMPILER__lib_impl_Debug /home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/impl/RandomWeatherGenerator.cpp || cmake_object_order_depends_target_lib_impl
+build lib/CMakeFiles/lib_impl.dir/impl/RandomWeatherGeneratorTask.cpp.o: CXX_COMPILER__lib_impl_Debug /home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/impl/RandomWeatherGeneratorTask.cpp || cmake_object_order_depends_target_lib_impl
   DEFINES = -DON_LINUX=1
-  DEP_FILE = lib/CMakeFiles/lib_impl.dir/impl/RandomWeatherGenerator.cpp.o.d
+  DEP_FILE = lib/CMakeFiles/lib_impl.dir/impl/RandomWeatherGeneratorTask.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
   INCLUDES = -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/../include -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/peripheral_factory -I/home/beloin/Documents/hardware/pi-projs/lcd-dht11/lib/./impl
   OBJECT_DIR = lib/CMakeFiles/lib_impl.dir
@@ -624,7 +624,7 @@ build lib/CMakeFiles/lib_impl.dir/impl/RandomWeatherGenerator.cpp.o: CXX_COMPILE
 #############################################
 # Link the static library lib/liblib_impl.a
 
-build lib/liblib_impl.a: CXX_STATIC_LIBRARY_LINKER__lib_impl_Debug lib/CMakeFiles/lib_impl.dir/peripheral_factory/PeripheralFactory.cpp.o lib/CMakeFiles/lib_impl.dir/impl/ConsoleDisplay.cpp.o lib/CMakeFiles/lib_impl.dir/impl/RandomWeatherGenerator.cpp.o
+build lib/liblib_impl.a: CXX_STATIC_LIBRARY_LINKER__lib_impl_Debug lib/CMakeFiles/lib_impl.dir/peripheral_factory/PeripheralFactory.cpp.o lib/CMakeFiles/lib_impl.dir/impl/ConsoleDisplay.cpp.o lib/CMakeFiles/lib_impl.dir/impl/RandomWeatherGeneratorTask.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = lib/CMakeFiles/lib_impl.dir
   POST_BUILD = :

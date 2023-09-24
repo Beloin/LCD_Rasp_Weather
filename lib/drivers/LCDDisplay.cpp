@@ -4,6 +4,7 @@
 
 #include "LCDDisplay.h"
 
+#include "mutex"
 #include "pigpio.h"
 #include <chrono>
 #include <thread>
@@ -23,16 +24,19 @@ void LCDDisplay::show_text(const std::string &v) {
     }
 }
 
+std::once_flag flag;
+
 int LCDDisplay::initialize() {
-    pig = gpioInitialise();
+    static int err = 0;
+    std::call_once(flag, [&]() {
+        pig = gpioInitialise();
 
-    if (pig < 0) return pig;
+        if (pig < 0) return pig;
 
-    int err = gpioSetMode(GPIO, PI_OUTPUT);
+        err = gpioSetMode(GPIO, PI_OUTPUT);
+    });
 
-    if (err) return err;
-
-    return 0;
+    return err;
 }
 
 // TODO: Create a way to destroy everything

@@ -2,7 +2,7 @@ add_library(
         lib_impl STATIC
         peripheral_factory/PeripheralFactory.cpp
         impl/ConsoleDisplay.cpp
-        impl/RandomWeatherGenerator.cpp
+        impl/RandomWeatherGeneratorTask.cpp
 )
 
 target_include_directories(lib_impl PUBLIC ../include peripheral_factory ./impl)
