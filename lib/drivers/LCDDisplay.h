@@ -8,7 +8,7 @@
 
 #include "drivers/TextBasedDisplay.h"
 
-class LCDDisplay : public TextBasedDisplay {
+class LCDDisplay : public Display::TextBasedDisplay {
 private:
     int pig;
 

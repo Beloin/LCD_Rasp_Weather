@@ -8,11 +8,13 @@
 
 #include "drivers/TextBasedDisplay.h"
 
-class ConsoleDisplay : public TextBasedDisplay  {
+
+class ConsoleDisplay : public Display::TextBasedDisplay {
 public:
     explicit ConsoleDisplay(char lineBreak);
 
     void show_text(const std::string &v) override;
+
     int initialize() override;
 
 };

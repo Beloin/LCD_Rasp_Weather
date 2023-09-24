@@ -9,16 +9,23 @@
 
 #include "ConsoleDisplay.h"
 
-TextBasedDisplay *DisplayBuilder::build(char line_separator) {
-    return new ConsoleDisplay('\n');
+namespace Display {
+
+    TextBasedDisplay *DisplayBuilder::build(char line_separator) {
+        return new ConsoleDisplay('\n');
+    }
 }
 
 #else
-
 #include "LCDDisplay.h"
 
-TextBasedDisplay *DisplayBuilder::build(char line_separator) {
-    return new LCDDisplay('\n');
+namespace Display {
+
+    TextBasedDisplay *DisplayBuilder::build(char line_separator) {
+        return new LCDDisplay('\n');
+    }
+
 }
 
 #endif
+

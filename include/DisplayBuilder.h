@@ -8,10 +8,14 @@
 
 #include "drivers/TextBasedDisplay.h"
 
-class DisplayBuilder {
-public:
-    static TextBasedDisplay* build(char line_separator);
-};
+namespace Display {
+
+    class DisplayBuilder {
+    public:
+        static TextBasedDisplay *build(char line_separator);
+    };
+
+}
 
 
 #endif //LCD_DHT11_DISPLAYBUILDER_H
