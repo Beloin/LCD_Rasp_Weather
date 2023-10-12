@@ -41,6 +41,13 @@ char current_col = 0, current_row = 0;
 void LCDDisplay::showText(const std::string &v) {
     spdlog::debug("showText {}", v);
     auto str = parseString(v);
+    int i = 0;
+    for (auto &a: *str) {
+        spdlog::debug("ParsedString {}-{}", i, a);
+        i++;
+    }
+
+
     sendData('C');
 }
 
