@@ -44,7 +44,7 @@ void LCDDisplay::showText(const std::string &v) {
     sendData('J');
 }
 
-std::once_flag flag;
+static std::once_flag flag;
 
 int LCDDisplay::initialize() {
     static int err = 0;
