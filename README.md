@@ -11,7 +11,7 @@ And in Hardware the developer had to solder the LCD header pins
 - [pigpio](http://abyz.me.uk/rpi/pigpio/cif.html) (Usually comes pre-installed on pi boards)
 - pthreads: `sudo apt-get install libpthread-stubs0-dev`
   - Make DHT11 Workers. 
-- spdlog: `pacman -S spdlog`
+- spdlog: `pacman -S spdlog` or in apt based system `sudo apt install libspdlog-dev`
   - Simple and Fast Logging Library
 
 ## Schematics

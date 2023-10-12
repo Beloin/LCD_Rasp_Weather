@@ -34,6 +34,13 @@ endif ()
 
 add_subdirectory(lib)
 
+find_package(spdlog REQUIRED)
 target_link_libraries(lcd_dht11 PUBLIC utils_lib lib_impl pthread)
+target_link_libraries(lcd_dht11 PRIVATE spdlog::spdlog_header_only)
+#target_link_libraries(lcd_dht11 PRIVATE spdlog::spdlog $<$<BOOL:${MINGW}>:ws2_32>)
+
+add_compile_definitions(SPDLOG_DEBUG_ON)
+#target_compile_definitions(lcd_dht11 PUBLIC SPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_DEBUG)
+#add_compile_definitions(TEST="TEST")
 
 #target_compile_definitions(lib_impl PRIVATE ON_RASP=1)

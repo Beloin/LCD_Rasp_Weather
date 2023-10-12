@@ -4,28 +4,34 @@
 #include <sstream>
 #include "PeripheralFactory.h"
 
+#include "spdlog/spdlog.h"
+
 using namespace std;
 
-int main(int argc, char **argv) {
+[[noreturn]] int main(int argc, char **argv) {
+#ifdef SPDLOG_DEBUG_ON
+    spdlog::set_level(spdlog::level::debug);
+#endif
+    spdlog::info("spdlog version {}.{}.{} and level {}", SPDLOG_VER_MAJOR, SPDLOG_VER_MINOR,
+                 SPDLOG_VER_PATCH, to_string_view(spdlog::get_level()));
+
     const char *name;
     Display::TextBasedDisplay *display = Factory::PeripheralFactory::build_display('\n');
     display->initialize();
-
-    name = typeid(*display).name();
-    cout << "using \"" << name << "\" as TextBasedDisplay implementation." << endl;
-
     Sensors::WeatherStatusTask *pStatusTask = Factory::PeripheralFactory::build_sensor();
     Sensors::WeatherInfo weatherInfo{Sensors::Status::Imprecise, 0, 0};
 
+    name = typeid(*display).name();
+    spdlog::debug("using {} as TextBasedDisplay implementation", name);
     name = typeid(*pStatusTask).name();
-    cout << "using \"" << name << "\" as WeatherStatusTask implementation." << endl;
+    spdlog::debug("using {} as TextBasedDisplay implementation", name);
 
     thread statusTask([&]() { (*pStatusTask)(&weatherInfo); });
 
     while (true) {
         std::stringstream a;
         a << "Temperature: " << weatherInfo.temperature
-          << "\nHumidity: " << weatherInfo.humidity << "\n\n";
+          << "\nHumidity: " << weatherInfo.humidity;
         display->show_text(a.str());
 
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));

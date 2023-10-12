@@ -15,11 +15,11 @@ namespace Display {
         std::string to = "\n";
         size_t pos = 0;
         while ((pos = v.find(from, pos)) != std::string::npos) {
-//        v.replace()
-//        v.replace(pos, from.length(), to);
+//            v.replace(); // TODO: This does not work... Why?
+//            v.replace(pos, from.length(), to);
             pos += to.length();
         }
-        std::cout << v;
+        std::cout << v << "\n";
     }
 
     int ConsoleDisplay::initialize() {
