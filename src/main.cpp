@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <thread>
 #include <sstream>
 #include "PeripheralFactory.h"
@@ -20,7 +19,11 @@ using namespace std;
     string &txt = ts;
     std::stringstream stringstream{txt};
     Display::TextBasedDisplay *display = Factory::PeripheralFactory::buildDisplay('\n');
-    display->initialize();
+    int err = display->initialize();
+    if (err) {
+        spdlog::critical("could not initialize display");
+    }
+
     Sensors::WeatherStatusTask *pStatusTask = Factory::PeripheralFactory::buildSensor();
     Sensors::WeatherInfo weatherInfo{Sensors::Status::Imprecise, 0, 0};
 
