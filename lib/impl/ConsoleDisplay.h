@@ -14,7 +14,7 @@ namespace Display {
     public:
         explicit ConsoleDisplay(char lineBreak);
 
-        void show_text(const std::string &v) override;
+        void showText(const std::string &v) override;
 
         int initialize() override;
 

@@ -17,7 +17,7 @@ namespace Display {
             this->line_break = line_break;
         }
 
-        virtual void show_text(const std::string &v) = 0;
+        virtual void showText(const std::string &v) = 0;
 
         virtual int initialize() = 0;
 

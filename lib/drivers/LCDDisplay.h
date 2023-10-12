@@ -17,7 +17,7 @@ namespace Display {
     public:
         explicit LCDDisplay(char lineBreak);
 
-        void show_text(const std::string &v) override;
+        void showText(const std::string &v) override;
 
         int initialize() override;
 

@@ -14,8 +14,8 @@ namespace Factory {
     class PeripheralFactory {
 
     public:
-        static Display::TextBasedDisplay *build_display(char line_separator);
-        static Sensors::WeatherStatusTask *build_sensor();
+        static Display::TextBasedDisplay *buildDisplay(char line_separator);
+        static Sensors::WeatherStatusTask *buildSensor();
     };
 
 

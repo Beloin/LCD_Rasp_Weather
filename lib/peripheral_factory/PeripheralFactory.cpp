@@ -12,11 +12,11 @@
 
 namespace Factory {
 
-    Display::TextBasedDisplay *PeripheralFactory::build_display(char line_separator) {
+    Display::TextBasedDisplay *PeripheralFactory::buildDisplay(char line_separator) {
         return new Display::ConsoleDisplay('\n');
     }
 
-    Sensors::WeatherStatusTask *PeripheralFactory::build_sensor() {
+    Sensors::WeatherStatusTask *PeripheralFactory::buildSensor() {
         return new Sensors::RandomWeatherGeneratorTask();
     }
 }

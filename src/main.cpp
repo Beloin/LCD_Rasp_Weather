@@ -16,9 +16,9 @@ using namespace std;
                  SPDLOG_VER_PATCH, to_string_view(spdlog::get_level()));
 
     const char *name;
-    Display::TextBasedDisplay *display = Factory::PeripheralFactory::build_display('\n');
+    Display::TextBasedDisplay *display = Factory::PeripheralFactory::buildDisplay('\n');
     display->initialize();
-    Sensors::WeatherStatusTask *pStatusTask = Factory::PeripheralFactory::build_sensor();
+    Sensors::WeatherStatusTask *pStatusTask = Factory::PeripheralFactory::buildSensor();
     Sensors::WeatherInfo weatherInfo{Sensors::Status::Imprecise, 0, 0};
 
     name = typeid(*display).name();
@@ -32,7 +32,7 @@ using namespace std;
         std::stringstream a;
         a << "Temperature: " << weatherInfo.temperature
           << "\nHumidity: " << weatherInfo.humidity;
-        display->show_text(a.str());
+        display->showText(a.str());
 
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }

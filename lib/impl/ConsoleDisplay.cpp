@@ -9,7 +9,7 @@ namespace Display {
 
     ConsoleDisplay::ConsoleDisplay(char lineBreak) : TextBasedDisplay(lineBreak) {}
 
-    void ConsoleDisplay::show_text(const std::string &v) {
+    void ConsoleDisplay::showText(const std::string &v) {
         // Replace any special line_break char
         std::string from = std::string(1, line_break);
         std::string to = "\n";

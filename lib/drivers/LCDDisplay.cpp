@@ -15,7 +15,7 @@ using Display::LCDDisplay;
 
 LCDDisplay::LCDDisplay(char lineBreak) : TextBasedDisplay(lineBreak) {}
 
-void LCDDisplay::show_text(const std::string &v) {
+void LCDDisplay::showText(const std::string &v) {
     while (true) {
         gpioWrite(GPIO, 1);
         std::this_thread::sleep_for(std::chrono::seconds(2));

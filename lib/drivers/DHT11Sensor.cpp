@@ -10,6 +10,7 @@
 #include "DHT11Sensor.h"
 #include "pigpio.h"
 
+// TODO: Change this DHT11 GPIO
 #define DHT11_GPIO 4
 #define TOTAL_BITS 40
 
