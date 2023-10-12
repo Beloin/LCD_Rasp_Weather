@@ -52,7 +52,6 @@ void LCDDisplay::showText(const std::string &v) {
         i++;
     }
 
-    sendData('C');
     delete lines;
 }
 
@@ -130,6 +129,7 @@ void initLcd() {
     sendCommand(0x0C);
     sendCommand(0x28);
     sendCommand(0x01);
+    gpioDelay(50 * TO_MS);
 }
 
 void putCursor(char row, char column) {
@@ -162,9 +162,9 @@ void send4Bits(char data, char rs) {
     gpioWrite(LCD_D5, ((data >> 1) & 0x1));
     gpioWrite(LCD_D4, ((data >> 0) & 0x1));
 
-    gpioDelay(50 * TO_MS); // TODO: This can use time interruptions in order to make it more efficient
+    gpioDelay(100); // TODO: This can use time interruptions in order to make it more efficient
     gpioWrite(LCD_E, 1);
-    gpioDelay(50 * TO_MS);
+    gpioDelay(100);
     gpioWrite(LCD_E, 0);
-    gpioDelay(50 * TO_MS);
+    gpioDelay(100);
 }
