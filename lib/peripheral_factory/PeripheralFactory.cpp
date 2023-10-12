@@ -54,13 +54,11 @@ namespace Factory {
             err = gpioInitialise();
 
             if (err == PI_INIT_FAILED) {
-                std::cout << "Erro nessa caralha" << std::endl;
                 return err;
             }
         });
 
-        std::cout << "MEU AMIGO: " << err << std::endl;;
-        return err;
+        return err < 0;
     }
 }
 
