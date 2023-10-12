@@ -16,6 +16,7 @@ namespace Factory {
     public:
         static Display::TextBasedDisplay *buildDisplay(char line_separator);
         static Sensors::WeatherStatusTask *buildSensor();
+        static int Initialize();
     };
 
 

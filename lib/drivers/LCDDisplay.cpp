@@ -40,8 +40,8 @@ char current_col = 0, current_row = 0;
 
 void LCDDisplay::showText(const std::string &v) {
     spdlog::debug("showText {}", v);
-    parseString(v);
-    sendData('J');
+    auto str = parseString(v);
+    sendData('C');
 }
 
 static std::once_flag flag;
@@ -49,39 +49,37 @@ static std::once_flag flag;
 int LCDDisplay::initialize() {
     static int err = 0;
     std::call_once(flag, [&]() {
-
-        pig = gpioInitialise(); // TODO: Call this elsewhere
-
-        if (pig == PI_INIT_FAILED) {
-            err = pig;
-            return pig;
-        }
-
         err = gpioSetMode(LCD_RS, PI_OUTPUT);
         if (err) {
-            spdlog::info("err with {}", LCD_RS);
+            spdlog::info("err with {} GPIO", LCD_RS);
+            return err;
         }
 
         err = gpioSetMode(LCD_E, PI_OUTPUT);
         if (err) {
-            spdlog::info("err with {}", LCD_E);
+            spdlog::info("err with {} GPIO", LCD_E);
+            return err;
         }
 
         err = gpioSetMode(LCD_D4, PI_OUTPUT);
         if (err) {
-            spdlog::info("err with {}", LCD_D4);
+            spdlog::info("err with {} GPIO", LCD_D4);
+            return err;
         }
         err = gpioSetMode(LCD_D5, PI_OUTPUT);
         if (err) {
-            spdlog::info("err with {}", LCD_D5);
+            spdlog::info("err with {} GPIO", LCD_D5);
+            return err;
         }
         err = gpioSetMode(LCD_D6, PI_OUTPUT);
         if (err) {
-            spdlog::info("err with {}", LCD_D6);
+            spdlog::info("err with {} GPIO", LCD_D6);
+            return err;
         }
         err = gpioSetMode(LCD_D7, PI_OUTPUT);
         if (err) {
-            spdlog::info("err with {}", LCD_D7);
+            spdlog::info("err with {} GPIO", LCD_D7);
+            return err;
         }
 
         initLcd();
