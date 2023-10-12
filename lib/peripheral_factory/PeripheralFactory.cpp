@@ -32,6 +32,7 @@ namespace Factory {
 #include "DHT11Sensor.h"
 #include "RandomWeatherGeneratorTask.h"
 #include <mutex>
+#include "pigpio.h"
 
 namespace Factory {
 
