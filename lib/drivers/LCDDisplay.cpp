@@ -39,16 +39,16 @@ LCDDisplay::LCDDisplay(char lineBreak) : TextBasedDisplay(lineBreak) {}
 char current_col = 0, current_row = 0;
 
 void LCDDisplay::showText(const std::string &v) {
-    spdlog::debug("showText {}", v);
-    auto str = parseString(v);
+    auto lines = parseString(v);
     int i = 0;
-    for (auto &a: *str) {
-        spdlog::debug("ParsedString {}-{}", i, a);
+    for (auto &a: *lines) {
+        spdlog::debug("ParsedString Line[{}]->{}", i, a);
         i++;
     }
 
-
+    putCursor(0, 0);
     sendData('C');
+    delete lines;
 }
 
 static std::once_flag flag;
@@ -110,6 +110,7 @@ const std::vector<std::string> *LCDDisplay::parseString(const std::string &text)
             result.str(std::string());
         }
     }
+    vector->push_back(result.str());
 
     return vector;
 }
