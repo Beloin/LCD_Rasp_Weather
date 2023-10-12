@@ -120,26 +120,33 @@ void initLcd() {
 
     // 4 Bit configuration
     gpioDelay(50 * TO_MS);
-    sendCommand(0x30);
-    gpioDelay(5 * TO_MS);
-    sendCommand(0x30);
+//    sendCommand(0x2);
+//    gpioDelay(5 * TO_MS);
+//    sendCommand(0x30);
+//
+//    gpioDelay(150);
+//    sendCommand(0x30);
+//    gpioDelay(10 * TO_MS);
+//    sendCommand(0x20);
+//    gpioDelay(10 * TO_MS);
+//
+//    sendCommand(0x28);
+//    gpioDelay(150);
+//    sendCommand(0x08);
+//    gpioDelay(150);
+//    sendCommand(0x01);
+//    gpioDelay(150);
+//    gpioDelay(150);
+//    sendCommand(0x06);
+//    gpioDelay(150);
+//    sendCommand(0x0C);
 
-    gpioDelay(150);
-    sendCommand(0x30);
-    gpioDelay(10 * TO_MS);
-    sendCommand(0x20);
-    gpioDelay(10 * TO_MS);
-
-    sendCommand(0x28);
-    gpioDelay(150);
-    sendCommand(0x08);
-    gpioDelay(150);
-    sendCommand(0x01);
-    gpioDelay(150);
-    gpioDelay(150);
-    sendCommand(0x06);
-    gpioDelay(150);
-    sendCommand(0x0C);
+    sendCommand (0x02);	/* 4bit mode */
+    sendCommand (0x28);	/* Initialization of 16X2 LCD in 4bit mode */
+    sendCommand (0x0C);	/* Display ON Cursor OFF */
+    sendCommand (0x06);	/* Auto Increment cursor */
+    sendCommand (0x01);	/* Clear display */
+    sendCommand (0x80);	/* Cursor at home position */
 }
 
 void putCursor(char row, char column) {
