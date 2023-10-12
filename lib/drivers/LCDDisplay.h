@@ -23,6 +23,9 @@ namespace Display {
 
         ~LCDDisplay();
 
+    private:
+        const std::vector<std::string> *parseString(const std::string &text);
+
     };
 
 }

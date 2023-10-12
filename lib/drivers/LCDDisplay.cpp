@@ -9,6 +9,7 @@
 #include <sstream>
 #include <thread>
 #include "vector"
+#include "spdlog/spdlog.h"
 
 #define LCD_RS  4
 #define LCD_E   5
@@ -17,20 +18,9 @@
 #define LCD_D6  23
 #define LCD_D7  24
 
-// Define some device constants
-#define LCD_WIDTH 16    // Maximum characters per line
-#define LCD_CHR true
-#define LCD_CMD false
-#define LCD_LINE_1 0x80 // LCD RAM address for the 1st line
-#define LCD_LINE_2 0xC0 // LCD RAM address for the 2nd line
-
-#define E_PULSE 0.0005
-#define E_DELAY 0.0005
-
 #define TO_MS 1000
 
 using Display::LCDDisplay;
-
 
 const std::vector<std::string> *parseString(std::string &text, char line_break);
 
@@ -49,6 +39,8 @@ LCDDisplay::LCDDisplay(char lineBreak) : TextBasedDisplay(lineBreak) {}
 char current_col = 0, current_row = 0;
 
 void LCDDisplay::showText(const std::string &v) {
+    spdlog::debug("showText {}", v);
+    parseString(v);
     sendData('J');
 }
 
@@ -57,19 +49,40 @@ std::once_flag flag;
 int LCDDisplay::initialize() {
     static int err = 0;
     std::call_once(flag, [&]() {
+
         pig = gpioInitialise(); // TODO: Call this elsewhere
 
-        if (pig < 0) {
+        if (pig == PI_INIT_FAILED) {
             err = pig;
             return pig;
         }
 
         err = gpioSetMode(LCD_RS, PI_OUTPUT);
+        if (err) {
+            spdlog::info("err with {}", LCD_RS);
+        }
+
         err = gpioSetMode(LCD_E, PI_OUTPUT);
+        if (err) {
+            spdlog::info("err with {}", LCD_E);
+        }
+
         err = gpioSetMode(LCD_D4, PI_OUTPUT);
+        if (err) {
+            spdlog::info("err with {}", LCD_D4);
+        }
         err = gpioSetMode(LCD_D5, PI_OUTPUT);
+        if (err) {
+            spdlog::info("err with {}", LCD_D5);
+        }
         err = gpioSetMode(LCD_D6, PI_OUTPUT);
+        if (err) {
+            spdlog::info("err with {}", LCD_D6);
+        }
         err = gpioSetMode(LCD_D7, PI_OUTPUT);
+        if (err) {
+            spdlog::info("err with {}", LCD_D7);
+        }
 
         initLcd();
     });
@@ -80,12 +93,12 @@ int LCDDisplay::initialize() {
 // TODO: Create a way to destroy everything
 LCDDisplay::~LCDDisplay() {}
 
-const std::vector<std::string> *parseString(std::string &text, char line_break) {
+const std::vector<std::string> *LCDDisplay::parseString(const std::string &text) {
     std::stringstream result;
     std::vector<std::string> *vector = new std::vector<std::string>();
 
     for (auto &c: text) {
-        if (c != line_break) {
+        if (c != this->line_break) {
             result << c;
         } else {
             vector->push_back(result.str());
@@ -97,6 +110,8 @@ const std::vector<std::string> *parseString(std::string &text, char line_break) 
 }
 
 void initLcd() {
+    spdlog::info("initializing LCD");
+
     // 4 Bit configuration
     gpioDelay(50 * TO_MS);
     sendCommand(0x30);
@@ -152,7 +167,7 @@ void send4Bits(char data, char rs) {
     gpioWrite(LCD_D4, ((data >> 0) & 0x1));
 
     gpioWrite(LCD_E, 1);
-    gpioDelay(50); // TODO: This can use time interruptions in order to make it more efficient
+    gpioDelay(100); // TODO: This can use time interruptions in order to make it more efficient
     gpioWrite(LCD_E, 0);
-    gpioDelay(50);
+    gpioDelay(100);
 }

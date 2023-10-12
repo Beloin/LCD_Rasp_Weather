@@ -31,11 +31,11 @@ namespace Factory {
 namespace Factory {
 
     // TODO: For now we will be using ConsoleDisplay because we need to add pins to LCD
-    Display::TextBasedDisplay *PeripheralFactory::build_display(char line_separator) {
+    Display::TextBasedDisplay *PeripheralFactory::buildDisplay(char line_separator) {
         return new Display::ConsoleDisplay('\n');
     }
 
-    Sensors::WeatherStatusTask *PeripheralFactory::build_sensor() {
+    Sensors::WeatherStatusTask *PeripheralFactory::buildSensor() {
         return new Sensors::DHT11Sensor();
     }
 }

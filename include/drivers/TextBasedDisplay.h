@@ -5,6 +5,7 @@
 #ifndef LCD_DHT11_TEXTBASEDDISPLAY_H
 #define LCD_DHT11_TEXTBASEDDISPLAY_H
 
+#include <vector>
 #include "string"
 
 namespace Display {
