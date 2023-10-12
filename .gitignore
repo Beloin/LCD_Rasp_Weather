@@ -3,6 +3,7 @@
 cmake-build_display-debug
 cmake-build-debug/**
 
+**/cmake-build-debug/**
 
 .idea
 

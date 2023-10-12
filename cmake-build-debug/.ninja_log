@@ -1,9 +1,0 @@
-# ninja log v5
-27	103	1695597547949348511	libutils_lib.a	27053030ce78ff50
-2	255	1695599295774292164	lib/CMakeFiles/lib_impl.dir/peripheral_factory/PeripheralFactory.cpp.o	e09932464b3a3dd4
-1	389	1695597548239349293	lib/CMakeFiles/lib_impl.dir/impl/ConsoleDisplay.cpp.o	a59e8e543f66620
-256	298	1695599295814292227	lib/liblib_impl.a	6ff1209bb828f3f6
-0	564	1695597548416016436	CMakeFiles/lcd_dht11.dir/src/main.cpp.o	5f50a80995e933f9
-1	610	1695597548462683228	lib/CMakeFiles/lib_impl.dir/impl/RandomWeatherGeneratorTask.cpp.o	61f1294cf11f3c4e
-298	362	1695599295880958999	lcd_dht11	753d20079f17bad8
-0	27	1695597547879348322	CMakeFiles/utils_lib.dir/src/utils/defin.c.o	7f45e9c17f1ec23
