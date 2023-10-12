@@ -369,6 +369,9 @@ lcd_dht11_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 lcd_dht11_SOURCE_DIR:STATIC=/home/beloin/Documents/hardware/pi-projs/lcd-dht11
 
+//The directory containing a CMake configuration file for spdlog.
+spdlog_DIR:PATH=spdlog_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

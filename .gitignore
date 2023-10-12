@@ -1,7 +1,7 @@
 *.out
 
 cmake-build_display-debug
-cmake-build-debug
+cmake-build-debug/**
 
 
 .idea
@@ -9,7 +9,7 @@ cmake-build-debug
 .vscode
 
 build_display
-build
+build/**
 
 # Prerequisites
 *.d

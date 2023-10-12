@@ -23,6 +23,7 @@ namespace Factory {
 
 #else
 
+#include "ConsoleDisplay.h"
 #include "LCDDisplay.h"
 #include "DHT11Sensor.h"
 #include "RandomWeatherGeneratorTask.h"

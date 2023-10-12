@@ -34,6 +34,6 @@ endif ()
 
 add_subdirectory(lib)
 
-target_link_libraries(lcd_dht11 PUBLIC utils_lib lib_impl)
+target_link_libraries(lcd_dht11 PUBLIC utils_lib lib_impl pthread)
 
 #target_compile_definitions(lib_impl PRIVATE ON_RASP=1)
