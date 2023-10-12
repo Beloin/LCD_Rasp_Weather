@@ -41,12 +41,17 @@ char current_col = 0, current_row = 0;
 void LCDDisplay::showText(const std::string &v) {
     auto lines = parseString(v);
     int i = 0;
-    for (auto &a: *lines) {
-        spdlog::debug("ParsedString Line[{}]->{}", i, a);
+    for (auto &parsed: *lines) {
+        spdlog::debug("ParsedString Line[{}]->{}", i, parsed);
+
+        putCursor(i, 0);
+        for (auto &c: parsed) {
+            sendData(c);
+        }
+
         i++;
     }
 
-    putCursor(0, 0);
     sendData('C');
     delete lines;
 }
