@@ -27,12 +27,15 @@ namespace Factory {
 
 #else
 
+#include <iostream>
 #include "ConsoleDisplay.h"
 #include "LCDDisplay.h"
 #include "DHT11Sensor.h"
 #include "RandomWeatherGeneratorTask.h"
 #include <mutex>
 #include "pigpio.h"
+
+static std::once_flag flag;
 
 namespace Factory {
 
@@ -44,7 +47,6 @@ namespace Factory {
         return new Sensors::DHT11Sensor();
     }
 
-    static std::once_flag flag;
 
     int PeripheralFactory::Initialize() {
         static int err = 0;
@@ -52,6 +54,7 @@ namespace Factory {
             err = gpioInitialise();
 
             if (err == PI_INIT_FAILED) {
+                std::cout << "Erro nessa caralha" << std::endl;
                 return err;
             }
         });
