@@ -59,6 +59,7 @@ namespace Factory {
             }
         });
 
+        std::cout << "MEU AMIGO: " << err << std::endl;;
         return err;
     }
 }
