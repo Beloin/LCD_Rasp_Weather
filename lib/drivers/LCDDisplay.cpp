@@ -46,7 +46,7 @@ void LCDDisplay::showText(const std::string &v) {
         i++;
     }
 
-    putCursor(1, 0);
+    putCursor(0, 0);
     sendData('C');
     delete lines;
 }
@@ -118,45 +118,13 @@ const std::vector<std::string> *LCDDisplay::parseString(const std::string &text)
 void initLcd() {
     spdlog::info("initializing LCD");
 
-    // 4 Bit configuration
-//    gpioDelay(50 * TO_MS);
-//    sendCommand(0x2);
-//    gpioDelay(5 * TO_MS);
-//    sendCommand(0x30);
-//
-//    gpioDelay(150);
-//    sendCommand(0x30);
-//    gpioDelay(10 * TO_MS);
-//    sendCommand(0x20);
-//    gpioDelay(10 * TO_MS);
-//
-//    sendCommand(0x28);
-//    gpioDelay(150);
-//    sendCommand(0x08);
-//    gpioDelay(150);
-//    sendCommand(0x01);
-//    gpioDelay(150);
-//    gpioDelay(150);
-//    sendCommand(0x06);
-//    gpioDelay(150);
-//    sendCommand(0x0C);
-
-    gpioDelay(500 * TO_MS);
+    gpioDelay(50 * TO_MS);
     sendCommand(0x33);
     sendCommand(0x32);
     sendCommand(0x06);
     sendCommand(0x0C);
     sendCommand(0x28);
     sendCommand(0x01);
-    gpioDelay(500 * TO_MS);
-
-
-//    sendCommand(0x02);    /* 4bit mode */
-//    sendCommand(0x28);    /* Initialization of 16X2 LCD in 4bit mode */
-//    sendCommand(0x0C);    /* Display ON Cursor OFF */
-//    sendCommand(0x06);    /* Auto Increment cursor */
-//    sendCommand(0x01);    /* Clear display */
-//    sendCommand(0x80);    /* Cursor at home position */
 }
 
 void putCursor(char row, char column) {
@@ -189,9 +157,9 @@ void send4Bits(char data, char rs) {
     gpioWrite(LCD_D5, ((data >> 1) & 0x1));
     gpioWrite(LCD_D4, ((data >> 0) & 0x1));
 
-    gpioDelay(500 * TO_MS); // TODO: This can use time interruptions in order to make it more efficient
+    gpioDelay(50 * TO_MS); // TODO: This can use time interruptions in order to make it more efficient
     gpioWrite(LCD_E, 1);
-    gpioDelay(500 * TO_MS);
+    gpioDelay(50 * TO_MS);
     gpioWrite(LCD_E, 0);
-    gpioDelay(500 * TO_MS);
+    gpioDelay(50 * TO_MS);
 }
