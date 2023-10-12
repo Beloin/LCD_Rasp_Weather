@@ -71,7 +71,7 @@ void Sensors::DHT11Sensor::operator()(Sensors::WeatherInfo *weatherInfo) const {
     }
 }
 
-std::once_flag flag;
+static std::once_flag flag;
 
 int initialize() {
     static int err = 0;
