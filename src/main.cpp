@@ -14,25 +14,33 @@ using namespace std;
     spdlog::info("spdlog version {}.{}.{} and level {}", SPDLOG_VER_MAJOR, SPDLOG_VER_MINOR,
                  SPDLOG_VER_PATCH, to_string_view(spdlog::get_level()));
 
+    int err;
     const char *name;
     string ts("123123123");
     string &txt = ts;
     std::stringstream stringstream{txt};
-    Display::TextBasedDisplay *display = Factory::PeripheralFactory::buildDisplay('\n');
-    int err = display->initialize();
+
+    err = Factory::PeripheralFactory::Initialize();
     if (err) {
         spdlog::critical("could not initialize display");
+        return -1;
+    }
+
+    Display::TextBasedDisplay *display = Factory::PeripheralFactory::buildDisplay('\n');
+    err = display->initialize();
+    if (err) {
+        spdlog::critical("could not initialize Peripherals");
+        return -1;
     }
 
     Sensors::WeatherStatusTask *pStatusTask = Factory::PeripheralFactory::buildSensor();
     Sensors::WeatherInfo weatherInfo{Sensors::Status::Imprecise, 0, 0};
+//    thread statusTask([&]() { (*pStatusTask)(&weatherInfo); });
 
     name = typeid(*display).name();
     spdlog::debug("using {} as TextBasedDisplay implementation", name);
     name = typeid(*pStatusTask).name();
     spdlog::debug("using {} as TextBasedDisplay implementation", name);
-
-//    thread statusTask([&]() { (*pStatusTask)(&weatherInfo); });
 
     while (true) {
         std::stringstream a;

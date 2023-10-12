@@ -19,6 +19,10 @@ namespace Factory {
     Sensors::WeatherStatusTask *PeripheralFactory::buildSensor() {
         return new Sensors::RandomWeatherGeneratorTask();
     }
+
+    int PeripheralFactory::Initialize() {
+        return 0;
+    }
 }
 
 #else
@@ -27,16 +31,31 @@ namespace Factory {
 #include "LCDDisplay.h"
 #include "DHT11Sensor.h"
 #include "RandomWeatherGeneratorTask.h"
+#include <mutex>
 
 namespace Factory {
 
-    // TODO: For now we will be using ConsoleDisplay because we need to add pins to LCD
     Display::TextBasedDisplay *PeripheralFactory::buildDisplay(char line_separator) {
         return new Display::LCDDisplay('\n');
     }
 
     Sensors::WeatherStatusTask *PeripheralFactory::buildSensor() {
         return new Sensors::DHT11Sensor();
+    }
+
+    static std::once_flag flag;
+
+    int PeripheralFactory::Initialize() {
+        static int err = 0;
+        std::call_once(flag, [&]() {
+            err = gpioInitialise();
+
+            if (err == PI_INIT_FAILED) {
+                return err;
+            }
+        });
+
+        return err;
     }
 }
 
