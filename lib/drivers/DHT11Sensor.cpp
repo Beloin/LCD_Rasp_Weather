@@ -11,7 +11,7 @@
 #include "pigpio.h"
 
 // TODO: Change this DHT11 GPIO
-#define DHT11_GPIO 4
+#define DHT11_GPIO 26
 #define TOTAL_BITS 40
 
 using namespace std;

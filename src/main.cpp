@@ -16,6 +16,9 @@ using namespace std;
                  SPDLOG_VER_PATCH, to_string_view(spdlog::get_level()));
 
     const char *name;
+    string ts("123123123");
+    string &txt = ts;
+    std::stringstream stringstream{txt};
     Display::TextBasedDisplay *display = Factory::PeripheralFactory::buildDisplay('\n');
     display->initialize();
     Sensors::WeatherStatusTask *pStatusTask = Factory::PeripheralFactory::buildSensor();
@@ -26,7 +29,7 @@ using namespace std;
     name = typeid(*pStatusTask).name();
     spdlog::debug("using {} as TextBasedDisplay implementation", name);
 
-    thread statusTask([&]() { (*pStatusTask)(&weatherInfo); });
+//    thread statusTask([&]() { (*pStatusTask)(&weatherInfo); });
 
     while (true) {
         std::stringstream a;
@@ -37,6 +40,6 @@ using namespace std;
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
 
-    statusTask.join();
+//    statusTask.join();
 }
 
