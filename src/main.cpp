@@ -22,14 +22,14 @@ using namespace std;
 
     err = Factory::PeripheralFactory::Initialize();
     if (err) {
-        spdlog::critical("could not initialize display");
+        spdlog::critical("could not initialize Peripherals");
         return -1;
     }
 
     Display::TextBasedDisplay *display = Factory::PeripheralFactory::buildDisplay('\n');
     err = display->initialize();
     if (err) {
-        spdlog::critical("could not initialize Peripherals");
+        spdlog::critical("could not initialize display");
         return -1;
     }
 
