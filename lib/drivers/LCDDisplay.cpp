@@ -120,7 +120,7 @@ const std::vector<std::string> *LCDDisplay::parseString(const std::string &text)
 }
 
 void initLcd() {
-    spdlog::info("initializing LCD");
+    spdlog::debug("initializing LCD");
 
     gpioDelay(50 * TO_MS);
     sendCommand(0x33);
