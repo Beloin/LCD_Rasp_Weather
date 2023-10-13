@@ -9,8 +9,8 @@
 
 #include "DHT11Sensor.h"
 #include "pigpio.h"
+#include "spdlog/spdlog.h"
 
-// TODO: Change this DHT11 GPIO
 #define DHT11_GPIO 26
 #define TOTAL_BITS 40
 
@@ -28,13 +28,13 @@ uint8_t sensor_data[5];
 void Sensors::DHT11Sensor::operator()(Sensors::WeatherInfo *weatherInfo) const {
     if (initialize()) {
         weatherInfo->status = Status::Error;
-        cout << "error while initializing DHT11 Sensor" << endl;
+        spdlog::debug("error while initializing DHT11 Sensor");
     }
 
     gpioSetPullUpDown(DHT11_GPIO, PI_PUD_UP);
     while (true) {
         std::this_thread::sleep_for(std::chrono::milliseconds(2000)); // Wait for DHT11 is available again
-        cout << "Start reading from DHT11\n";
+        spdlog::debug("Reading from DHT11");
 
         bit_count = -3; // Three first low data will be Communication bits
         start_tick = gpioTick();
