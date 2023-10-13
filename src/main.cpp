@@ -45,8 +45,8 @@ using namespace std;
     while (true) {
         spdlog::debug("WeatherInfo is {}", Sensors::StatusToString(weatherInfo.status));
         std::stringstream a;
-        a << "Temp: " << weatherInfo.temperature
-          << "\nHumidity: " << weatherInfo.humidity;
+        a << "Temp: " << weatherInfo.temperature << "C"
+          << "\nHumidity: " << weatherInfo.humidity << "%";
         display->showText(a.str());
 
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
