@@ -35,7 +35,7 @@ using namespace std;
 
     Sensors::WeatherStatusTask *pStatusTask = Factory::PeripheralFactory::buildSensor();
     Sensors::WeatherInfo weatherInfo{Sensors::Status::Imprecise, 0, 0};
-//    thread statusTask([&]() { (*pStatusTask)(&weatherInfo); });
+    thread statusTask([&]() { (*pStatusTask)(&weatherInfo); });
 
     name = typeid(*display).name();
     spdlog::debug("using {} as TextBasedDisplay implementation", name);
@@ -51,6 +51,6 @@ using namespace std;
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
 
-//    statusTask.join();
+    statusTask.join();
 }
 
