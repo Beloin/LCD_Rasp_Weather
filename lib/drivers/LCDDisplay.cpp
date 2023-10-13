@@ -162,9 +162,8 @@ void send4Bits(char data, char rs) {
     gpioWrite(LCD_D5, ((data >> 1) & 0x1));
     gpioWrite(LCD_D4, ((data >> 0) & 0x1));
 
-    gpioDelay(100); // TODO: This can use time interruptions in order to make it more efficient
     gpioWrite(LCD_E, 1);
-    gpioDelay(100);
+    gpioDelay(50);
     gpioWrite(LCD_E, 0);
-    gpioDelay(100);
+    gpioDelay(50);
 }
