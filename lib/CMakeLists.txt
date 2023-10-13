@@ -3,6 +3,7 @@ add_library(
         peripheral_factory/PeripheralFactory.cpp
         impl/ConsoleDisplay.cpp
         impl/RandomWeatherGeneratorTask.cpp
+        impl/WeatherStatusTask.cpp
 )
 
 target_include_directories(lib_impl PUBLIC ../include peripheral_factory ./impl ./drivers)
@@ -14,11 +15,11 @@ message("`uname -m` output was '${_output}'")
 
 if (_output STREQUAL "x86_64")
     target_compile_definitions(lib_impl PRIVATE ON_LINUX=1)
-else()
+else ()
     target_sources(lib_impl PRIVATE drivers/LCDDisplay.cpp)
     target_sources(lib_impl PRIVATE drivers/DHT11Sensor.cpp)
 
     target_compile_definitions(lib_impl PRIVATE ON_LINUX=0)
 
     target_link_libraries(lib_impl pigpio)
-endif()
+endif ()
