@@ -74,6 +74,7 @@ void Sensors::DHT11Sensor::operator()(Sensors::WeatherInfo *weatherInfo) const {
 static std::once_flag flag;
 
 int initialize() {
+    spdlog::info("initializing DHT11");
     static int err = 0;
 
     std::call_once(flag, [&]() {
