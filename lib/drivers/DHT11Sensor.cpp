@@ -86,8 +86,6 @@ int initialize() {
 
 static void gpio_change_sr(int gpio, int level, uint32_t tick) {
     if (level == 0) {
-        spdlog::info("GPIO WAS CHANGED");
-
         int duration = tick - start_tick;
         start_tick = tick;
         if (++bit_count > 0) {
