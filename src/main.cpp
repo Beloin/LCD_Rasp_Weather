@@ -43,6 +43,7 @@ using namespace std;
     spdlog::debug("using {} as TextBasedDisplay implementation", name);
 
     while (true) {
+        spdlog::debug("WeatherInfo is {}", Sensors::StatusToString(weatherInfo.status));
         std::stringstream a;
         a << "Temperature: " << weatherInfo.temperature
           << "\nHumidity: " << weatherInfo.humidity;

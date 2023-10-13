@@ -5,6 +5,7 @@
 #ifndef LCD_DHT11_WEATHERSTATUSTASK_H
 #define LCD_DHT11_WEATHERSTATUSTASK_H
 
+#include <string>
 
 namespace Sensors {
 
@@ -13,6 +14,8 @@ namespace Sensors {
         Imprecise = 1,
         Ok = 0
     };
+
+    std::string StatusToString(Status status);
 
     struct WeatherInfo {
         Status status;
