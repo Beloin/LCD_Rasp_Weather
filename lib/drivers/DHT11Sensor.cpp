@@ -11,7 +11,7 @@
 #include "pigpio.h"
 #include "spdlog/spdlog.h"
 
-#define DHT11_GPIO 26
+#define DHT11_GPIO 6
 #define TOTAL_BITS 40
 
 using namespace std;
