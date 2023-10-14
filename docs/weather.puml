@@ -6,12 +6,12 @@ struct WeatherInfo {
     + float humidity
 }
 
-interface WeatherGetter {
-    + void get_weather(struct WeatherInfo *weather)
+interface WeatherStatusTask {
+    + [[noreturn]] void run(struct WeatherInfo *weather)
 }
 
-WeatherGetter <|-- DHT11WeatherGetter
-WeatherGetter <|-- RandomValuesWeatherGetter
+WeatherStatusTask <|-- DHT11WeatherTask
+WeatherStatusTask <|-- RandomValuesWeatherTask
 
 @enduml
 

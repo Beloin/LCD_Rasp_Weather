@@ -34,7 +34,6 @@ interruptions to some delays.
     <img src="docs/hardware.jpeg" alt="Real Life Circuit">
 </div>
 
-
 # Code Structure
 
 ### Display
@@ -48,7 +47,8 @@ There's an `interface` that dictates the way all the data will be set on display
 ### WeatherStatusTask
 
 There's an `interface` that dictates the way the weather is acquired. The data will be scoped in a single
-struct named `WeatherInfo`.
+struct named `WeatherInfo`. The `WeatherTask` will be running in its own thread, acquiring the data and writing it to
+the `WeatherInfo` struct. Race conditions are not treated since the program will be running in a controlled system.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 20px; place-items: center;">
     <img src="./docs/Weather_UML.png" alt="Weather UML">
