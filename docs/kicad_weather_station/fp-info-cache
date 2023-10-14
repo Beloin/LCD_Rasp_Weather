@@ -1,8 +1,99 @@
-1691033079481
-ADA3708
-ADA3708_RPI-ZERO
-Raspberry Pi board model B+, full outline with position of big connectors &amp; drill holes
-
+23762179127801
+Sensor
+ASAIR_AM2302_P2.54mm_Lead2.75mm_TabDown
+Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/AM2302.pdf
+Temperature and humidity module DHT22 AM2302
 0
-40
-40
+4
+4
+Sensor
+ASAIR_AM2302_P2.54mm_Vertical
+Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/AM2302.pdf
+Temperature and humidity module DHT22 AM2302
+0
+4
+4
+Sensor
+Aosong_DHT11_5.5x12.0_P2.54mm
+Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/DHT11.pdf
+Temperature and humidity module
+0
+4
+4
+Sensor
+Avago_APDS-9960
+Digital Proximity, Ambient Light, RGB and Gesture Sensor (https://docs.broadcom.com/doc/AV02-4191EN)
+DFN Sensor optical IR
+0
+8
+8
+Sensor
+LuminOX_LOX-O2
+SST LuminOX Luminescence-based O2 sensor, https://sstsensing.com/wp-content/uploads/2021/08/DS0030rev15_LuminOx.pdf
+SST LuminOX O2
+0
+4
+4
+Sensor
+MQ-6
+Gas Sensor, 6 pin, https://www.winsen-sensor.com/d/files/semiconductor/mq-6.pdf
+gas sensor
+0
+6
+6
+Sensor
+Rohm_RPR-0521RS
+Digital Proximity and Ambient Light Sensor, 2.36 x 3.94 x 1.35mm, LGA-8 (https://fscdn.rohm.com/en/products/databook/datasheet/opto/optical_sensor/opto_module/rpr-0521rs-e.pdf)
+DFN Sensor optical IR
+0
+8
+8
+Sensor
+SHT1x
+SHT1x
+SHT1x
+0
+8
+8
+Sensor
+SPEC_110-xxx_SMD-10Pin_20x20mm_P4.0mm
+SPEC Sensors SMD package, 20x20mm, https://www.spec-sensors.com/wp-content/uploads/2016/10/3SP_H2S_50-C-Package-110-304.pdf
+SPEC Sensors gas sensor
+0
+10
+10
+Sensor
+Senseair_S8_Down
+Sensair S8 Series CO2 sensor, 1kHz PWM output, Modbus, THT
+co2 gas sensor pwm modbus
+0
+9
+9
+Sensor
+Senseair_S8_Up
+Sensair S8 Series CO2 sensor, 1kHz PWM output, Modbus, THT
+co2 gas sensor pwm modbus
+0
+9
+9
+Sensor
+Sensirion_SCD4x-1EP_10.1x10.1mm_P1.25mm_EP4.8x4.8mm
+Sensirion SCD4x QFN, 20 Pin (https://sensirion.com/media/documents/C4B87CE6/627C2DCD/CD_DS_SCD40_SCD41_Datasheet_D1.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
+Sensirion QFN NoLead
+0
+25
+21
+Sensor
+Sensortech_MiCS_5x7mm_P1.25mm
+https://www.sgxsensortech.com/content/uploads/2014/07/1084_Datasheet-MiCS-5524-rev-8.pdf
+Sensortech MiCS MEMS sensor
+0
+10
+10
+Sensor
+Winson_GM-402B_5x5mm_P1.27mm
+Winson GM-402B, 8 Pin (https://www.winsen-sensor.com/d/files/me2/mems--gm-402b--manual-v1_1.pdf)
+Winson
+0
+8
+8

@@ -7,6 +7,13 @@ explicit in [Code Structure](#Code-Structure) and implemented in `PeripheralFact
 is used the `ConsoleDisplay` implementation, and in RPI0 is used `LCDDisplay`. Also, to have the Weather
 data is implemented `RandomWeatherGeneratorTask` and in RPI0 `DHT11Sensor`.
 
+The program uses mean 7%CPU in the RaspOS - Raspberry PI Zero 2W. Could use less if implemented time
+interruptions to some delays.
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 20px; place-items: center;">
+    <img src="./docs/CPU_usage.png" alt="CPU Usage">
+</div>
+
 ## Dependencies
 
 - [pigpio](http://abyz.me.uk/rpi/pigpio/cif.html) (Usually comes pre-installed on pi boards)
