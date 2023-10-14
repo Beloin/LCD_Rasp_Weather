@@ -6,7 +6,6 @@
 
 #include "mutex"
 #include "pigpio.h"
-#include <sstream>
 #include <thread>
 #include "vector"
 #include "spdlog/spdlog.h"
@@ -41,7 +40,7 @@ char current_col = 0, current_row = 0;
 void LCDDisplay::showText(const std::string &v) {
     auto lines = parseString(v);
     int i = 0;
-    for (auto &parsed: *lines) {
+    for (auto &parsed: lines) {
         spdlog::debug("ParsedString Line[{}]->{}", i, parsed);
 
         putCursor(i, 0);
@@ -51,8 +50,6 @@ void LCDDisplay::showText(const std::string &v) {
 
         i++;
     }
-
-    delete lines;
 }
 
 static std::once_flag flag;
@@ -97,26 +94,6 @@ int LCDDisplay::initialize() {
     });
 
     return err;
-}
-
-// TODO: Create a way to destroy everything
-LCDDisplay::~LCDDisplay() {}
-
-const std::vector<std::string> *LCDDisplay::parseString(const std::string &text) {
-    std::stringstream result;
-    std::vector<std::string> *vector = new std::vector<std::string>();
-
-    for (auto &c: text) {
-        if (c != this->line_break) {
-            result << c;
-        } else {
-            vector->push_back(result.str());
-            result.str(std::string());
-        }
-    }
-    vector->push_back(result.str());
-
-    return vector;
 }
 
 void initLcd() {

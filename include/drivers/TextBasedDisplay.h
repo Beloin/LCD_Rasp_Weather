@@ -7,6 +7,7 @@
 
 #include <vector>
 #include "string"
+#include <sstream>
 
 namespace Display {
 
@@ -24,6 +25,23 @@ namespace Display {
 
     protected:
         char line_break = '\n';
+
+        [[nodiscard]] std::vector<std::string> parseString(const std::string &text) const {
+            std::stringstream result;
+            auto vector = std::vector<std::string>();
+
+            for (auto c: text) {
+                if (c != this->line_break) {
+                    result << c;
+                } else {
+                    vector.push_back(result.str());
+                    result.str(std::string());
+                }
+            }
+            vector.push_back(result.str());
+
+            return vector;
+        }
     };
 
 }

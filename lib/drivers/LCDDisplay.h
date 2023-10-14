@@ -11,8 +11,6 @@
 namespace Display {
 
     class LCDDisplay : public TextBasedDisplay {
-    private:
-        int pig;
 
     public:
         explicit LCDDisplay(char lineBreak);
@@ -20,11 +18,6 @@ namespace Display {
         void showText(const std::string &v) override;
 
         int initialize() override;
-
-        ~LCDDisplay();
-
-    private:
-        const std::vector<std::string> *parseString(const std::string &text);
 
     };
 
